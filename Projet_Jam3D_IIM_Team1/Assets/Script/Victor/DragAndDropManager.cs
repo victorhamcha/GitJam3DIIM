@@ -19,10 +19,7 @@ public class DragAndDropManager : MonoBehaviour
     private GameObject item;
     public Transform _player;
     private  float grabbedObjectSize;
-<<<<<<< HEAD
-=======
     public float throwForce;
->>>>>>> master
     void Update()
     {
 
@@ -57,11 +54,7 @@ public class DragAndDropManager : MonoBehaviour
 
                 item.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-<<<<<<< HEAD
-                item.GetComponent<Rigidbody>().detectCollisions = true;
-=======
                 
->>>>>>> master
                
                 
                // item.GetComponent<Rigidbody>().useGravity = false;
@@ -91,14 +84,6 @@ public class DragAndDropManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0)&&ellapsedtime<=0)
             {
                 holding = false;
-<<<<<<< HEAD
-                item = null;
-                ellapsedtime = 0.1f;
-                //item.GetComponent<Rigidbody>().velocity = savedVel;
-                //item.GetComponent<Rigidbody>().angularVelocity = savedAngularVel;              
-               
-                Debug.Log("yepa");
-=======
                 item.GetComponent<Renderer>().material = originalMaterial;
                 //item = null;
                 ellapsedtime = 0.1f;
@@ -120,7 +105,6 @@ public class DragAndDropManager : MonoBehaviour
                 //item.GetComponent<Rigidbody>().angularVelocity = savedAngularVel;              
 
                 Debug.Log("shoot");
->>>>>>> master
             }
         }
     }
