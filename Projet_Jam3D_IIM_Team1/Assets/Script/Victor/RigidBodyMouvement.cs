@@ -43,8 +43,16 @@ public class RigidBodyMouvement : MonoBehaviour
             _rb.AddForce(Vector3.up * jumpHeight,ForceMode.Impulse);
             isGrounded = false;
         }
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            col.height /= 2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            col.height *= 2;
+        }
 
-       
+
     }
 
     private bool IsGrounded()
