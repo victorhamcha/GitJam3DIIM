@@ -27,30 +27,33 @@ public class RigidBodyMouvement : MonoBehaviour
     void Update()
     {
 
-        
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = (transform.right * x + transform.forward * z);
-        //Vector3 move = new Vector3(x, 0, z);
-        //_rb.AddForce(move*speed,ForceMode.VelocityChange); //Voiture
-        // _rb.velocity = move * speed;
-        _rb.MovePosition(transform.position + (move * speed * Time.deltaTime));
-
-        if (Input.GetButton("Jump")&&isGrounded)
+        if(Time.timeScale!=0)
         {
-            _rb.AddForce(Vector3.up * jumpHeight,ForceMode.Impulse);
-            isGrounded = false;
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = (transform.right * x + transform.forward * z);
+            //Vector3 move = new Vector3(x, 0, z);
+            //_rb.AddForce(move*speed,ForceMode.VelocityChange); //Voiture
+            // _rb.velocity = move * speed;
+            _rb.MovePosition(transform.position + (move * speed * Time.deltaTime));
+
+            if (Input.GetButton("Jump") && isGrounded)
+            {
+                _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                isGrounded = false;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                col.height /= 2;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                col.height *= 2;
+            }
         }
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            col.height /= 2;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            col.height *= 2;
-        }
+
+      
 
 
     }

@@ -87,14 +87,18 @@ public class ThreeDPlayerLooking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSnesy;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSnesy;
+        if (Time.timeScale != 0.0f)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSnesy;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSnesy;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
+       
     }
 }
 
