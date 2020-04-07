@@ -5,13 +5,17 @@ using UnityEngine;
 public class RigidBodyMouvement : MonoBehaviour
 {
   
-    public float speed = 12f;
+    public float normalSpeed = 12f;
+    public float slideSpeed = 25;
     public float jumpHeight = 10f;
 
+    private float speed;
     private Rigidbody _rb;
     private CapsuleCollider col;
-
-    bool isGrounded = true;
+    bool slide = false;
+    public bool isGrounded = true;
+    public float slideTimer;
+    public float slideTime=0.8f;
 
     public LayerMask groundMask;
 
@@ -21,6 +25,8 @@ public class RigidBodyMouvement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+        speed = normalSpeed;
+        slideTimer = slideTime;
     }
 
     // Update is called once per frame
@@ -45,15 +51,36 @@ public class RigidBodyMouvement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                col.height /= 2;
+                col.height /= 5;
+                speed = slideSpeed;
+                slide = true;
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            if (Input.GetKeyUp(KeyCode.LeftShift)&&slide)
             {
-                col.height *= 2;
+               
+               
             }
         }
 
-      
+        if(slide)
+        {
+           
+            if(slideTimer>0)
+            {
+                slideTimer -= Time.deltaTime;
+            }
+            else
+            {
+                slide = false;
+                slideTimer = slideTime;
+                speed = normalSpeed;
+                col.height *= 5;
+
+            }
+        }
+       
+            
+        
 
 
     }

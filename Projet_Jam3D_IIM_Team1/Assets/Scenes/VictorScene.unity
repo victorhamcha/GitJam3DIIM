@@ -795,6 +795,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRB
       objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: slideTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 8000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa9334f617fa894d9a108c68b15039c, type: 3}
 --- !u!1 &1870219334
