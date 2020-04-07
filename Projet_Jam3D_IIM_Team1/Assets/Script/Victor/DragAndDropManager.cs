@@ -21,6 +21,7 @@ public class DragAndDropManager : MonoBehaviour
     private  float grabbedObjectSize;
     public float throwForce;
     public Vector3 dragOffSet;
+    public Transform posObject;
     void Update()
     {
 
@@ -76,8 +77,8 @@ public class DragAndDropManager : MonoBehaviour
         {
           
 
-            Vector3 newPos = _player.position + dragOffSet + Camera.main.transform.forward * grabbedObjectSize;
-            item.transform.position = newPos;
+            //Vector3 newPos = _player.position + dragOffSet + Camera.main.ScreenToWorldPoint(Input.mousePosition) * grabbedObjectSize;
+            item.transform.position = posObject.position;
             //Ray objRay = new Ray(newPos, Vector3.left);
             //Debug.DrawRay(objRay.origin, objRay.direction, Color.green);
 
