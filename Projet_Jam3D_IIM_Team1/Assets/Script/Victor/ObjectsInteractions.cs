@@ -36,7 +36,7 @@ public class ObjectsInteractions : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (grabbed)
+        if (grabbed&&other.gameObject.tag=="platforme" && cam.minRotation> cam.transform.rotation.eulerAngles.x)
         {
             cam.minRotation = cam.transform.rotation.eulerAngles.x;
             //Debug.Log(Camera.main.transform.rotation.x*180/Mathf.PI);
@@ -46,7 +46,7 @@ public class ObjectsInteractions : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (grabbed)
+        if (grabbed && other.gameObject.tag == "platforme")
         {
             cam.minRotation = 90.0f;
             
