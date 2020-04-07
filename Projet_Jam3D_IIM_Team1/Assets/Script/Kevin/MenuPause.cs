@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MenuPause : MonoBehaviour
 {
 
@@ -13,6 +14,7 @@ public class MenuPause : MonoBehaviour
         menuPauseUI.SetActive(false);
         Time.timeScale = 1;
         GamePause = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Pause()
@@ -20,13 +22,17 @@ public class MenuPause : MonoBehaviour
         menuPauseUI.SetActive(true);
         Time.timeScale = 0;
         GamePause = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
-    
+
+
+
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
           //  Debug.Log("touche P presser");
             if(GamePause)
