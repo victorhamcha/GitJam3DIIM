@@ -56,6 +56,7 @@ public class DragAndDropManager : MonoBehaviour
                 //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 item.GetComponent<Rigidbody>().isKinematic = true;
+                item.GetComponent<Collider>().isTrigger = true;
                 item.transform.SetParent(_player);
                
                 
@@ -93,6 +94,7 @@ public class DragAndDropManager : MonoBehaviour
                 item.GetComponent<Rigidbody>().isKinematic = false;
                 item.GetComponent<Renderer>().material = originalMaterial;
                 item.transform.SetParent(null);
+                item.GetComponent<Collider>().isTrigger = false;
                 item = null;
                 ellapsedtime = 0.1f;
                 
@@ -106,6 +108,7 @@ public class DragAndDropManager : MonoBehaviour
                 item.GetComponent<Rigidbody>().AddForce(_player.forward * throwForce);
                 item.transform.SetParent(null);
                 holding = false;
+                item.GetComponent<Collider>().isTrigger = false;
                 item = null;
                 ellapsedtime = 0.1f;
 
