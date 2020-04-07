@@ -39,6 +39,7 @@ public class RigidBodyMouvement : MonoBehaviour
             float z = Input.GetAxis("Vertical");
 
             Vector3 move = (transform.right * x + transform.forward * z);
+            move = Vector3.ClampMagnitude(move, 1);
             //Vector3 move = new Vector3(x, 0, z);
             //_rb.AddForce(move*speed,ForceMode.VelocityChange); //Voiture
             // _rb.velocity = move * speed;
@@ -51,7 +52,7 @@ public class RigidBodyMouvement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                col.height /= 5;
+                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y/5, transform.localScale.z);
                 speed = slideSpeed;
                 slide = true;
             }
@@ -74,7 +75,7 @@ public class RigidBodyMouvement : MonoBehaviour
                 slide = false;
                 slideTimer = slideTime;
                 speed = normalSpeed;
-                col.height *= 5;
+                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y *5, transform.localScale.z);
 
             }
         }
