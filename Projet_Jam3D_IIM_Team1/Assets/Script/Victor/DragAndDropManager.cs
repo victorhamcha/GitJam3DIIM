@@ -22,6 +22,7 @@ public class DragAndDropManager : MonoBehaviour
     public float throwForce;
     public Vector3 dragOffSet;
     public Transform posObject;
+    private ObjectsInteractions theObject;
     void Update()
     {
 
@@ -53,7 +54,9 @@ public class DragAndDropManager : MonoBehaviour
                 holding = true;
                 item = hit.transform.gameObject;
                 grabbedObjectSize=item.GetComponent<Renderer>().bounds.size.magnitude;
-
+                theObject = item.GetComponent<ObjectsInteractions>();
+                theObject.grabbed = true;
+                theObject.cam = Camera.main.GetComponent<ThreeDPlayerLooking>();
                 //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 item.GetComponent<Rigidbody>().isKinematic = true;
@@ -96,6 +99,8 @@ public class DragAndDropManager : MonoBehaviour
                 item.GetComponent<Renderer>().material = originalMaterial;
                 item.transform.SetParent(null);
                 item.GetComponent<Collider>().isTrigger = false;
+                theObject.grabbed = false;
+                theObject = null;
                 item = null;
                 ellapsedtime = 0.1f;
                 
@@ -110,10 +115,13 @@ public class DragAndDropManager : MonoBehaviour
                 item.transform.SetParent(null);
                 holding = false;
                 item.GetComponent<Collider>().isTrigger = false;
+                theObject.grabbed = false; 
+                theObject.throns = true;
+                theObject = null;
                 item = null;
                 ellapsedtime = 0.1f;
+                
 
-                   
 
                 Debug.Log("shoot");
             }

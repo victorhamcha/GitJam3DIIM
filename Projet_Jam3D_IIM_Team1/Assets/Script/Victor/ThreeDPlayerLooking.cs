@@ -79,6 +79,8 @@ public class ThreeDPlayerLooking : MonoBehaviour
     public float mouseSnesy = 100f;
     public Transform playerBody;
     private float xRotation = 0f;
+    public float maxRotation;
+    public float minRotation;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -87,13 +89,14 @@ public class ThreeDPlayerLooking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
         if (Time.timeScale != 0.0f)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSnesy;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSnesy;
 
             xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation = Mathf.Clamp(xRotation, maxRotation, minRotation);
 
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
