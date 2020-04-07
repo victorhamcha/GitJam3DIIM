@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         if (numToSpawn > numSpawned)
         {
             //where your instantiated object spawns from
-            transform.position = new Vector3(0, 10, 0);
+            transform.position = new Vector3(5, 10, 0);
             SpawnRandomObject();
         }
     }

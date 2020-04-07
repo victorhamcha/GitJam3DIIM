@@ -11,6 +11,7 @@ internal enum effect
 [RequireComponent(typeof(BoxCollider))]
 public class InteractionManager : MonoBehaviour
 {
+    [SerializeField] private string tagForTrigger = "Player";
     [SerializeField] private effect effectType = effect.SLOWMO;
     [Range (1,5)] [SerializeField] private float effectDuration = 1;
     [SerializeField] private float timeBeforeEffect = 0f;
@@ -19,7 +20,7 @@ public class InteractionManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == tagForTrigger)
             StartCoroutine(TimeScaleEffect(effectDuration, timeBeforeEffect));
     }
 
