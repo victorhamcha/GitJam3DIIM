@@ -50,17 +50,15 @@ public class RigidBodyMouvement : MonoBehaviour
                 _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 isGrounded = false;
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift)&&!slide)
             {
-                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y/5, transform.localScale.z);
+                // transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y/5, transform.localScale.z);
+                col.height /= 5;
                 speed = slideSpeed;
                 slide = true;
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift)&&slide)
-            {
-               
-               
-            }
+
+           
         }
 
         if(slide)
@@ -75,8 +73,8 @@ public class RigidBodyMouvement : MonoBehaviour
                 slide = false;
                 slideTimer = slideTime;
                 speed = normalSpeed;
-                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y *5, transform.localScale.z);
-
+                // transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y *5, transform.localScale.z);
+                col.height *= 5;
             }
         }
        
