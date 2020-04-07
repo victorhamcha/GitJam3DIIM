@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class Quitter : MonoBehaviour
 {
-    public void doquit()
+    public float temps;
+
+    void Update()
     {
-        Application.Quit();
+        temps -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("quiter");
+            Application.Quit();
+        }
+        else if(temps <= 0)
+        { 
+               Debug.Log("quiter2");
+               Application.Quit();
+
+        }
     }
 }
