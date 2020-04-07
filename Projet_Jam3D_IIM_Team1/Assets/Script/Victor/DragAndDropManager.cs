@@ -20,6 +20,7 @@ public class DragAndDropManager : MonoBehaviour
     public Transform _player;
     private  float grabbedObjectSize;
     public float throwForce;
+    public Vector3 dragOffSet;
     void Update()
     {
 
@@ -52,9 +53,10 @@ public class DragAndDropManager : MonoBehaviour
                 item = hit.transform.gameObject;
                 grabbedObjectSize=item.GetComponent<Renderer>().bounds.size.magnitude;
 
-                item.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                
+                //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                item.GetComponent<Rigidbody>().isKinematic = true;
+                item.transform.SetParent(_player);
                
                 
                // item.GetComponent<Rigidbody>().useGravity = false;
@@ -71,9 +73,13 @@ public class DragAndDropManager : MonoBehaviour
 
         if(holding)
         {
+          
 
-            Vector3 newPos = _player.position + Camera.main.transform.forward * grabbedObjectSize;
+            Vector3 newPos = _player.position + dragOffSet + Camera.main.transform.forward * grabbedObjectSize;
             item.transform.position = newPos;
+            //Ray objRay = new Ray(newPos, Vector3.left);
+            //Debug.DrawRay(objRay.origin, objRay.direction, Color.green);
+
             item.GetComponent<Renderer>().material = SelectableMaterial;
             
             
@@ -84,25 +90,26 @@ public class DragAndDropManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0)&&ellapsedtime<=0)
             {
                 holding = false;
+                item.GetComponent<Rigidbody>().isKinematic = false;
                 item.GetComponent<Renderer>().material = originalMaterial;
-                //item = null;
+                item.transform.SetParent(null);
+                item = null;
                 ellapsedtime = 0.1f;
                 
-                //item.GetComponent<Rigidbody>().velocity = savedVel;
-                //item.GetComponent<Rigidbody>().angularVelocity = savedAngularVel;              
-
+               
                 Debug.Log("drop");
             }
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 item.GetComponent<Renderer>().material = originalMaterial;
+                item.GetComponent<Rigidbody>().isKinematic = false;
                 item.GetComponent<Rigidbody>().AddForce(_player.forward * throwForce);
+                item.transform.SetParent(null);
                 holding = false;
-                //item = null;
+                item = null;
                 ellapsedtime = 0.1f;
 
-                //item.GetComponent<Rigidbody>().velocity = savedVel;
-                //item.GetComponent<Rigidbody>().angularVelocity = savedAngularVel;              
+                   
 
                 Debug.Log("shoot");
             }
