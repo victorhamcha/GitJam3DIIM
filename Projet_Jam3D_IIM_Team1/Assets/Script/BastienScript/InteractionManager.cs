@@ -4,15 +4,15 @@ using UnityEngine;
 
 internal enum effect
 {
-    SLOWMO,
-    FASTMO
+    TIMESCALE
 }
 
 [RequireComponent(typeof(BoxCollider))]
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private string tagForTrigger = "Player";
-    [SerializeField] private effect effectType = effect.SLOWMO;
+    [SerializeField] private effect effectType = effect.TIMESCALE;
+    [Range(0.1f, 2)] [SerializeField] private float timescaleValue = 1;
     [Range (1,5)] [SerializeField] private float effectDuration = 1;
     [SerializeField] private float timeBeforeEffect = 0f;
 
@@ -21,22 +21,18 @@ public class InteractionManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == tagForTrigger)
-            StartCoroutine(TimeScaleEffect(effectDuration, timeBeforeEffect));
+            StartCoroutine(TimeScaleEffect(timescaleValue, effectDuration, timeBeforeEffect));
     }
 
-    private IEnumerator TimeScaleEffect(float timer, float countdown)
+    private IEnumerator TimeScaleEffect(float tsv, float timer, float countdown)
     {
-        yield return new WaitForSeconds(countdown);
-        if (effectType == effect.SLOWMO)
+        yield return new WaitForSecondsRealtime(countdown);
+        if (effectType == effect.TIMESCALE)
         {
-            Time.timeScale = 0.5f;
+            Time.timeScale = tsv;
+            yield return new WaitForSecondsRealtime(timer);
+            Time.timeScale = 1f;
         }
-        if(effectType == effect.FASTMO)
-        {
-            Time.timeScale = 1.5f;
-        }
-        yield return new WaitForSeconds(timer);
-        Time.timeScale = 1f;
     }
 
     void OnDrawGizmos()
