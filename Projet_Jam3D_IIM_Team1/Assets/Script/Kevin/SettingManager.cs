@@ -9,6 +9,8 @@ public class SettingManager : MonoBehaviour
     public Toggle fullscreenToggle;
     public Dropdown resolutionDropdown;
     public Slider musiqueSlider;
+    public Slider sensiMouseSlider;
+    ThreeDPlayerLooking sensi = new ThreeDPlayerLooking();
 
     public Resolution[] resolution;
     public AudioSource musicSource;
@@ -22,7 +24,10 @@ public class SettingManager : MonoBehaviour
         fullscreenToggle.onValueChanged.AddListener(delegate { OnFullscreenToggle(); });
         resolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
         musiqueSlider.onValueChanged.AddListener(delegate { OnMusiqueVolumeChange(); });
+        //sensiMouseSlider.onValueChanged.AddListener(delegate { OnsensiMouseChange(); });
         //applyButton.onClick.AddListener(delegate { OnApplyButtonClick(); });
+       // sensiMouseSlider.onValueChanged.AddListener(delegate { OnSensiMouseChange(); });
+
 
         resolution = Screen.resolutions;
         foreach(Resolution resolution in resolution)
@@ -34,6 +39,13 @@ public class SettingManager : MonoBehaviour
             LoadSettings();
         }*/
     }
+
+    /*
+    public void OnsensiMouseChange()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * sensi.mouseSnesy;
+        float mouseY = Input.GetAxis("Mouse Y") * sensi.mouseSnesy;
+    }*/
 
     public void OnFullscreenToggle()
     {
@@ -49,6 +61,9 @@ public class SettingManager : MonoBehaviour
     {
         musicSource.volume = gameSettings.musicVolume = musiqueSlider.value;
     }
+
+    
+
 
     /*public void OnApplyButtonClick()
     {
