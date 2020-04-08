@@ -7,6 +7,7 @@ public class DragAndDropManager : MonoBehaviour
     // To see if we are in it //
     public Material SelectableMaterial;
     public Material originalMaterial;
+    public Material grabbedOriginalMaterial;
     private Transform _selection;
     public LayerMask dragabble;
     public float distanceTOObjects = 3.0f; 
@@ -43,7 +44,7 @@ public class DragAndDropManager : MonoBehaviour
         {
             Transform selection = hit.transform;
             Renderer selectionRenderer = selection.GetComponent<Renderer>();
-            if(selectionRenderer!=null&&!holding)
+            if(selectionRenderer!=null)
             {
 
                 originalMaterial = selection.gameObject.GetComponent<ObjectsInteractions>().originalMaterial;
@@ -98,7 +99,7 @@ public class DragAndDropManager : MonoBehaviour
     public GameObject Grab(GameObject grabbedObject)
     {
         holding = true;
-        originalMaterial = grabbedObject.GetComponent<ObjectsInteractions>().originalMaterial;
+        grabbedOriginalMaterial = grabbedObject.GetComponent<ObjectsInteractions>().originalMaterial;
         theObject = grabbedObject.GetComponent<ObjectsInteractions>();
         theObject.grabbed = true;
         theObject.cam = Camera.main.GetComponent<ThreeDPlayerLooking>();
@@ -112,7 +113,7 @@ public class DragAndDropManager : MonoBehaviour
     {
         holding = false;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.GetComponent<Renderer>().material = originalMaterial;
+        item.GetComponent<Renderer>().material = grabbedOriginalMaterial;
         item.transform.SetParent(null);
         item.GetComponent<Collider>().isTrigger = false;
         theObject.cam.minRotation = 90.0f;
@@ -123,7 +124,7 @@ public class DragAndDropManager : MonoBehaviour
     }
     private void Throw()
     {
-        item.GetComponent<Renderer>().material = originalMaterial;
+        item.GetComponent<Renderer>().material = grabbedOriginalMaterial;
         item.GetComponent<Rigidbody>().isKinematic = false;
         item.GetComponent<Rigidbody>().AddForce( Camera.main.transform.forward* throwForce);
         item.transform.SetParent(null);
