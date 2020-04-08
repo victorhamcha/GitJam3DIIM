@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19791bfd010e8641829efc6c65f8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSnesy: 10
+  mouseSnesy: 5
   playerBody: {fileID: 5700594930843074785}
   maxRotation: -90
   minRotation: 90
@@ -253,14 +253,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5700594930843074810}
   serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
+  m_Mass: 5.5
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &8467876360743683784
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -287,12 +287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919c70d1dd2006b46b7fe08030bedbf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 12
-  slideSpeed: 25
-  jumpHeight: 70
+  normalSpeed: 7
+  slideSpeed: 16
+  jumpHeight: 90
   isGrounded: 1
   slideTimer: 0
-  slideTime: 0.8
+  slideTime: 0.65
   groundMask:
     serializedVersion: 2
     m_Bits: 512

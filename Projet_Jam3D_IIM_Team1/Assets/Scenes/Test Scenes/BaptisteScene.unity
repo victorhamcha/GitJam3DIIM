@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5700594930024656100, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: mouseSnesy
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5700594930843074785, guid: daa9334f617fa894d9a108c68b15039c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,6 +198,21 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683782, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683782, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683784, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
         type: 3}
       propertyPath: normalSpeed
@@ -201,7 +221,17 @@ PrefabInstance:
     - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
         type: 3}
       propertyPath: slideSpeed
-      value: 14
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: slideTime
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467876360743683785, guid: daa9334f617fa894d9a108c68b15039c,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa9334f617fa894d9a108c68b15039c, type: 3}
