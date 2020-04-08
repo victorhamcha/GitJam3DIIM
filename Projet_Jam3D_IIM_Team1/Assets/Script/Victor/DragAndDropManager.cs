@@ -8,7 +8,6 @@ public class DragAndDropManager : MonoBehaviour
     public Material SelectableMaterial;
     public Material originalMaterial;
     private Transform _selection;
-    private Renderer _selRenderer;
     public LayerMask dragabble;
     public float distanceTOObjects = 3.0f; 
     private bool _in = false;
@@ -17,12 +16,12 @@ public class DragAndDropManager : MonoBehaviour
     private bool holding;
     float ellapsedtime = 0.1f;
     public GameObject item;
-    
-    private  float grabbedObjectSize;
-    public float throwForce;
-    public Vector3 dragOffSet;
     public Transform posObject;
     private ObjectsInteractions theObject;
+    //lancé//
+    public float throwForce;
+   
+   
    
     void Update()
     {
@@ -100,12 +99,9 @@ public class DragAndDropManager : MonoBehaviour
     {
         holding = true;
         originalMaterial = grabbedObject.GetComponent<ObjectsInteractions>().originalMaterial;
-        grabbedObjectSize = grabbedObject.GetComponent<Renderer>().bounds.size.magnitude;
         theObject = grabbedObject.GetComponent<ObjectsInteractions>();
         theObject.grabbed = true;
         theObject.cam = Camera.main.GetComponent<ThreeDPlayerLooking>();
-        //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         grabbedObject.GetComponent<Collider>().isTrigger = true;
         grabbedObject.transform.SetParent(posObject);
@@ -129,7 +125,7 @@ public class DragAndDropManager : MonoBehaviour
     {
         item.GetComponent<Renderer>().material = originalMaterial;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.GetComponent<Rigidbody>().AddForce(posObject.forward * throwForce);
+        item.GetComponent<Rigidbody>().AddForce( Camera.main.transform.forward* throwForce);
         item.transform.SetParent(null);
         holding = false;
         item.GetComponent<Collider>().isTrigger = false;
