@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - platforme
-  - Poulet
+  - camion
+  - biere
+  - pasteque
   layers:
   - Default
   - TransparentFX
