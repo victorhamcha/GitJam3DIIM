@@ -11,4 +11,9 @@ public class AutoMoveTruck : MonoBehaviour
     {
         transform.Translate(new Vector3(speed, 0, 0) * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hi");
+    }
 }
