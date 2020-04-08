@@ -68,7 +68,7 @@ public class Recipe : MonoBehaviour
         return isNotIn;
     }
 
-    private bool IsTheRecipeGood()
+    public bool IsTheRecipeGood()
     {
         bool good = false;
         for (int j = 0; j < recipeIngredient.Length; j++)
