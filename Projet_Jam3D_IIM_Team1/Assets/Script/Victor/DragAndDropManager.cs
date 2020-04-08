@@ -16,13 +16,14 @@ public class DragAndDropManager : MonoBehaviour
     //Drag&Drop//
     private bool holding;
     float ellapsedtime = 0.1f;
-    private GameObject item;
+    public GameObject item;
     
     private  float grabbedObjectSize;
     public float throwForce;
     public Vector3 dragOffSet;
     public Transform posObject;
     private ObjectsInteractions theObject;
+   
     void Update()
     {
 
