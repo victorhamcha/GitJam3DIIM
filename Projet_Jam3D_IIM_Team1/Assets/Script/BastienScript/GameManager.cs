@@ -63,5 +63,7 @@ public class GameManager : MonoBehaviour
             transform.position = new Vector3(5, 10, 0);
             SpawnRandomObject();
         }
+
+        //if current scene is number 4 => IsTheRecipeGood ? yes => next scene (scene manager) => no then continue
     }
 }
