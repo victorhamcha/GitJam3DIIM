@@ -47,7 +47,6 @@ public class Scene3Manager : MonoBehaviour
         if(bombe!=null&&!grabbed)
         {
             float distance = Vector3.Distance(bombe.transform.position, _player.transform.position);
-            float distanceSol = Vector2.Distance(bombe.transform.position, sol.position);
            
             if(distance<=2f)
             {
@@ -55,11 +54,7 @@ public class Scene3Manager : MonoBehaviour
                 Debug.Log("win");
                 grabbed = true;
             }
-            if(distanceSol<=8f)
-            {
-                Debug.Log("loose");
-                grabbed = true;
-            }
+         
         }
     }
 }

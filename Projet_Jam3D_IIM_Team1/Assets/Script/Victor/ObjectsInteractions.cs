@@ -9,10 +9,10 @@ public class ObjectsInteractions : MonoBehaviour
     public ThreeDPlayerLooking cam;
     public bool grabbed=false;
     public bool Destructible=false;
-
+    public Material originalMaterial;
     void Start()
     {
-        
+        originalMaterial = gameObject.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame

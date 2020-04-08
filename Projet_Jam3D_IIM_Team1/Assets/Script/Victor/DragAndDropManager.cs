@@ -44,10 +44,10 @@ public class DragAndDropManager : MonoBehaviour
         {
             Transform selection = hit.transform;
             Renderer selectionRenderer = selection.GetComponent<Renderer>();
-            if(selectionRenderer!=null&&selectionRenderer.material.color!=SelectableMaterial.color)
+            if(selectionRenderer!=null&&!holding)
             {
 
-                originalMaterial = selectionRenderer.material;
+                originalMaterial = selection.gameObject.GetComponent<ObjectsInteractions>().originalMaterial;
                 selectionRenderer.material = SelectableMaterial;
             }
             if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -119,6 +119,7 @@ public class DragAndDropManager : MonoBehaviour
     public GameObject Grab(GameObject grabbedObject)
     {
         holding = true;
+        originalMaterial = grabbedObject.GetComponent<ObjectsInteractions>().originalMaterial;
         grabbedObjectSize = grabbedObject.GetComponent<Renderer>().bounds.size.magnitude;
         theObject = grabbedObject.GetComponent<ObjectsInteractions>();
         theObject.grabbed = true;
