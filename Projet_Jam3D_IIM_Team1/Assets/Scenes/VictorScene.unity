@@ -402,6 +402,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   grabbed: 0
   Destructible: 0
+  originalMaterial: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +683,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   grabbed: 0
   Destructible: 0
+  originalMaterial: {fileID: 0}
 --- !u!1 &897952785
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +847,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   grabbed: 0
   Destructible: 0
+  originalMaterial: {fileID: 0}
 --- !u!1 &969134778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1426,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   grabbed: 0
   Destructible: 0
+  originalMaterial: {fileID: 0}
 --- !u!1 &1940654937
 GameObject:
   m_ObjectHideFlags: 0

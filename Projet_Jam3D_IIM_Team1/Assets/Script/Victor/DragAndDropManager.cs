@@ -82,34 +82,14 @@ public class DragAndDropManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Mouse0)&&ellapsedtime<=0)
             {
-                holding = false;
-                item.GetComponent<Rigidbody>().isKinematic = false;
-                item.GetComponent<Renderer>().material = originalMaterial;
-                item.transform.SetParent(null);
-                item.GetComponent<Collider>().isTrigger = false;
-                theObject.grabbed = false;
-                theObject = null;
-                item = null;
-                ellapsedtime = 0.1f;
-                
+
+                Drop();
                
                 Debug.Log("drop");
             }
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                item.GetComponent<Renderer>().material = originalMaterial;
-                item.GetComponent<Rigidbody>().isKinematic = false;
-                item.GetComponent<Rigidbody>().AddForce(posObject.forward * throwForce);
-                item.transform.SetParent(null);
-                holding = false;
-                item.GetComponent<Collider>().isTrigger = false;
-                theObject.grabbed = false; 
-                theObject.throns = true;
-                theObject = null;
-                item = null;
-                ellapsedtime = 0.1f;
-                
-
+                Throw();
 
                 Debug.Log("shoot");
             }
@@ -130,5 +110,34 @@ public class DragAndDropManager : MonoBehaviour
         grabbedObject.GetComponent<Collider>().isTrigger = true;
         grabbedObject.transform.SetParent(posObject);
         return grabbedObject;
+    }
+
+    private void Drop()
+    {
+        holding = false;
+        item.GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponent<Renderer>().material = originalMaterial;
+        item.transform.SetParent(null);
+        item.GetComponent<Collider>().isTrigger = false;
+        theObject.cam.minRotation = 90.0f;
+        theObject.grabbed = false;
+        theObject = null;
+        item = null;
+        ellapsedtime = 0.1f;
+    }
+    private void Throw()
+    {
+        item.GetComponent<Renderer>().material = originalMaterial;
+        item.GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponent<Rigidbody>().AddForce(posObject.forward * throwForce);
+        item.transform.SetParent(null);
+        holding = false;
+        item.GetComponent<Collider>().isTrigger = false;
+        theObject.grabbed = false;
+        theObject.cam.minRotation = 90.0f;
+        theObject.throns = true;
+        theObject = null;
+        item = null;
+        ellapsedtime = 0.1f;
     }
 }
