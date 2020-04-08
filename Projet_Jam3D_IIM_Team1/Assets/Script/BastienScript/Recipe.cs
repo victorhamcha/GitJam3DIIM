@@ -69,12 +69,15 @@ public class Recipe : MonoBehaviour
         bool good = false;
         for (int j = 0; j < recipeIngredient.Length; j++)
         {
-            if (recipeIngredient[j].gameObject == currentIngredient[j].gameObject && recipeIngredient[j] != null)
+            if (recipeIngredient[j].gameObject == currentIngredient[j].gameObject && recipeIngredient[j] != null && currentIngredient[j] != null)
             {
                 good = true;
             }
             else
+            {
                 good = false;
+                break;
+            }
         }
         return good;
     }
