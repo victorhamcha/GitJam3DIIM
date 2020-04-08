@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 133210951}
   m_Layer: 8
   m_Name: Poulet
-  m_TagString: Untagged
+  m_TagString: Poulet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

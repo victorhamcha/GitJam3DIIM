@@ -29,6 +29,16 @@ public class ObjectsInteractions : MonoBehaviour
             throns = false;
             Instantiate(throwned, gameObject.transform.position, Quaternion.identity);
         }
+        
+        if(gameObject.tag=="Poulet"&&collision.gameObject.tag=="platforme")
+        {
+            //Debug.Log("qlkdf");
+            UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            if(scene.name=="Scene3")
+            {
+                Debug.Log("loose");
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
