@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public float temps;
     public GameObject menuPauseUI;
 
     void BackMenu()
@@ -27,23 +26,6 @@ public class Menu : MonoBehaviour
     {
         menuPauseUI.SetActive(false);
         Time.timeScale = 1;
-    }
-
-    void Quitter()
-    {
-        temps -= Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("quiter");
-            Application.Quit();
-        }
-        else if (temps <= 0)
-        {
-            Debug.Log("quiter2");
-            Application.Quit();
-
-        }
     }
 
 
