@@ -9,10 +9,11 @@ public class Scene2manager : MonoBehaviour
     public DragAndDropManager dragAndDrop;
     public float couldownSpawn;
     private float couldown;
-    public Transform destination;
+   // public Transform destination;
     public Transform poulet;
     public Transform four;
     private int vague = 0;
+    private List<GameObject> objectSpawned=new List<GameObject>();
     void Start()
     {
         couldown = couldownSpawn;
@@ -35,33 +36,48 @@ public class Scene2manager : MonoBehaviour
                     } 
                 case 1:
                     {
-                        Instantiate(spawnable, spawners[0].position, Quaternion.identity);
+                       GameObject spawned= Instantiate(spawnable, spawners[0].position, Quaternion.identity);
+                        objectSpawned.Add(spawned);
+
                        break;
                     }
                 case 2:
                     {
-                        Instantiate(spawnable, spawners[1].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[2].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[3].position, Quaternion.identity);
+                        GameObject spawned=Instantiate(spawnable, spawners[1].position, Quaternion.identity);
+                        GameObject spawned1=Instantiate(spawnable, spawners[2].position, Quaternion.identity);
+                        GameObject spawned2 =Instantiate(spawnable, spawners[3].position, Quaternion.identity);
+                        objectSpawned.Add(spawned);
+                        objectSpawned.Add(spawned1);
+                        objectSpawned.Add(spawned2);
+
                         break;
                     }
                 case 3:
                     {
-                        Instantiate(spawnable, spawners[4].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[5].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[6].position, Quaternion.identity);
+                        GameObject spawned= Instantiate(spawnable, spawners[4].position, Quaternion.identity);
+                        GameObject spawned1= Instantiate(spawnable, spawners[5].position, Quaternion.identity);
+                        GameObject spawned2= Instantiate(spawnable, spawners[6].position, Quaternion.identity);
+                        objectSpawned.Add(spawned);
+                        objectSpawned.Add(spawned1);
+                        objectSpawned.Add(spawned2);
                         break;
                     }
                 case 4:
                     {
-                        Instantiate(spawnable, spawners[7].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[8].position, Quaternion.identity);
+
+                        GameObject spawned=Instantiate(spawnable, spawners[7].position, Quaternion.identity);
+                        GameObject spawned1=Instantiate(spawnable, spawners[8].position, Quaternion.identity);
+                        objectSpawned.Add(spawned);
+                        objectSpawned.Add(spawned1);
+                  
                         break;
                     }
                 case 5:
                     {
-                        Instantiate(spawnable, spawners[9].position, Quaternion.identity);
-                        Instantiate(spawnable, spawners[10].position, Quaternion.identity);
+                        GameObject spawned=Instantiate(spawnable, spawners[9].position, Quaternion.identity);
+                        GameObject spawned1= Instantiate(spawnable, spawners[10].position, Quaternion.identity);
+                        objectSpawned.Add(spawned);
+                        objectSpawned.Add(spawned1);
                         vague = 0;
                         break;
                     }
@@ -69,12 +85,31 @@ public class Scene2manager : MonoBehaviour
             vague++;
             couldown = couldownSpawn;
         }
-        if (dragAndDrop.item.transform == poulet && Vector3.Distance(poulet.position, four.position) < 2)
+
+
+        for(int i=0; i<objectSpawned.Count;i++)
         {
-            four.gameObject.GetComponent<Renderer>().material.color = Color.green;
-            if(Input.GetKeyDown(KeyCode.F))
+            if(objectSpawned[i].transform.position.y<-20)
             {
-                Debug.Log("win()");
+                Destroy(objectSpawned[i]);
+                Debug.Log("boom");
+                objectSpawned.RemoveAt(i);
+            }
+        }
+
+        if(dragAndDrop.item!=null)
+        {
+            if (dragAndDrop.item.transform == poulet && Vector3.Distance(poulet.position, four.position) < 2)
+            {
+                four.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    Debug.Log("win()");
+                }
+            }
+            else
+            {
+                four.gameObject.GetComponent<Renderer>().material.color = Color.white;
             }
         }
         else
@@ -82,6 +117,6 @@ public class Scene2manager : MonoBehaviour
             four.gameObject.GetComponent<Renderer>().material.color = Color.white;
         }
 
-        
+
     }
 }
