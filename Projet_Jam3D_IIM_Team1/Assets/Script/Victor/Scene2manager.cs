@@ -92,7 +92,7 @@ public class Scene2manager : MonoBehaviour
             if(objectSpawned[i].transform.position.y<-20)
             {
                 Destroy(objectSpawned[i]);
-                Debug.Log("boom");
+                
                 objectSpawned.RemoveAt(i);
             }
         }
@@ -102,9 +102,10 @@ public class Scene2manager : MonoBehaviour
             if (dragAndDrop.item.transform == poulet && Vector3.Distance(poulet.position, four.position) < 2)
             {
                 four.gameObject.GetComponent<Renderer>().material.color = Color.green;
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     Debug.Log("win()");
+                    Destroy(poulet.gameObject);
                 }
             }
             else
