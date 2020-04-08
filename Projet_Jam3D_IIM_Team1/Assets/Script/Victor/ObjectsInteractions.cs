@@ -8,6 +8,8 @@ public class ObjectsInteractions : MonoBehaviour
     public GameObject throwned;
     public ThreeDPlayerLooking cam;
     public bool grabbed=false;
+    public bool Destructible=false;
+
     void Start()
     {
         
@@ -20,9 +22,8 @@ public class ObjectsInteractions : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        
-        if (throns)
+    {       
+        if (throns&&Destructible)
         {
             Destroy(gameObject);
             throns = false;
