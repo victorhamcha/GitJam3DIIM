@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneGeneral.unity
     guid: c62f35eef29a2434d889a452e7c76a8d
   - enabled: 1
-    path: Assets/Scenes/Kevin_Scene.unity
+    path: Assets/Scenes/Test Scenes/Kevin_Scene.unity
     guid: 9f0e7040363ca9e4393e6637e5a3bb1d
   - enabled: 1
-    path: Assets/Scenes/MenueP.unity
+    path: Assets/Scenes/Menu Scenes/MenueP.unity
     guid: 8b9cf00d6697b9e4d8283191718976ef
   - enabled: 1
-    path: Assets/Scenes/Credit.unity
+    path: Assets/Scenes/Menu Scenes/Credit.unity
     guid: 0a903c15b870a6f46ba7babdc1b77d8c
   m_configObjects: {}
