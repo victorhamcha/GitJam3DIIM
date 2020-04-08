@@ -6,7 +6,7 @@ using UnityEngine;
 public enum GameState { MAIN_MENU, IN_GAME }
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance = null;
+    public static GameManager instance = null;
 
     //define a list
     public static List<GameObject> myListObjects = new List<GameObject>();
@@ -16,8 +16,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()

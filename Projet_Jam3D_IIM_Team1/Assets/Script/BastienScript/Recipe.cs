@@ -11,12 +11,16 @@ public class Recipe : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameObject objCol = other.gameObject;
+        if (objCol.tag == "Player")
+        {
+            return;
+        }
         Debug.Log(objCol);
         if(IsInRecipe(objCol) && IsNotAlreadyInRecipe(objCol))
         {
             Debug.Log("Good ingredient");
             currentIngredient[i] = objCol;
-            //objCol.SetActive(false); // deactivate the ingredient as it is in the recipe
+            objCol.SetActive(false); // deactivate the ingredient as it is in the recipe
         }
         else if(!IsNotAlreadyInRecipe(objCol))
         {
