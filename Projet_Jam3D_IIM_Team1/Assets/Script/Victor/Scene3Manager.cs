@@ -12,11 +12,18 @@ public class Scene3Manager : MonoBehaviour
     private bool go=false;
     public float throwPower;
     private float trajectoire=0;
+    private GameObject bombe;
+    public GameObject _player;
+    private DragAndDropManager drag;
+    private bool grabbed;
+    public Transform sol;
     void Start()
     {
         timer = timerValue;
         direction = Random.Range(-2, 2);
         trajectoire = 50 * direction;
+        drag = FindObjectOfType<DragAndDropManager>();
+      
     }
 
     // Update is called once per frame
@@ -31,10 +38,28 @@ public class Scene3Manager : MonoBehaviour
         {
             go = true;
           
-            GameObject bombe= Instantiate(poulet, four.position, Quaternion.identity);
-            bombe.GetComponent<Rigidbody>().AddForce(new Vector3(-120*throwPower, 110*throwPower, trajectoire));
+            bombe= Instantiate(poulet, four.position, Quaternion.identity);
+            bombe.GetComponent<Rigidbody>().AddForce(new Vector3(-120*throwPower, 110*throwPower, trajectoire),ForceMode.Force);
+            
            
+        }
+
+        if(bombe!=null&&!grabbed)
+        {
+            float distance = Vector3.Distance(bombe.transform.position, _player.transform.position);
+            float distanceSol = Vector2.Distance(bombe.transform.position, sol.position);
            
+            if(distance<=2f)
+            {
+                drag.item = drag.Grab(bombe);
+                Debug.Log("win");
+                grabbed = true;
+            }
+            if(distanceSol<=8f)
+            {
+                Debug.Log("loose");
+                grabbed = true;
+            }
         }
     }
 }

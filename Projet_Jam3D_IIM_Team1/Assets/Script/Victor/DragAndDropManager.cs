@@ -52,18 +52,7 @@ public class DragAndDropManager : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.Mouse0))
             {
-                holding = true;
-                item = hit.transform.gameObject;
-                grabbedObjectSize=item.GetComponent<Renderer>().bounds.size.magnitude;
-                theObject = item.GetComponent<ObjectsInteractions>();
-                theObject.grabbed = true;
-                theObject.cam = Camera.main.GetComponent<ThreeDPlayerLooking>();
-                //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                item.GetComponent<Rigidbody>().isKinematic = true;
-                item.GetComponent<Collider>().isTrigger = true;
-                item.transform.SetParent(posObject);
-               
+                item = Grab(hit.transform.gameObject);
                 
                // item.GetComponent<Rigidbody>().useGravity = false;
                 
@@ -82,10 +71,8 @@ public class DragAndDropManager : MonoBehaviour
           
 
             //Vector3 newPos = _player.position + dragOffSet + Camera.main.ScreenToWorldPoint(Input.mousePosition) * grabbedObjectSize;
-            item.transform.position = posObject.position;
-            //Ray objRay = new Ray(newPos, Vector3.left);
-            //Debug.DrawRay(objRay.origin, objRay.direction, Color.green);
 
+            item.transform.position = posObject.position;
             item.GetComponent<Renderer>().material = SelectableMaterial;
             
             
@@ -127,5 +114,20 @@ public class DragAndDropManager : MonoBehaviour
                 Debug.Log("shoot");
             }
         }
+    }
+
+    public GameObject Grab(GameObject grabbedObject)
+    {
+        holding = true;
+        grabbedObjectSize = grabbedObject.GetComponent<Renderer>().bounds.size.magnitude;
+        theObject = grabbedObject.GetComponent<ObjectsInteractions>();
+        theObject.grabbed = true;
+        theObject.cam = Camera.main.GetComponent<ThreeDPlayerLooking>();
+        //item.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+        grabbedObject.GetComponent<Collider>().isTrigger = true;
+        grabbedObject.transform.SetParent(posObject);
+        return grabbedObject;
     }
 }
