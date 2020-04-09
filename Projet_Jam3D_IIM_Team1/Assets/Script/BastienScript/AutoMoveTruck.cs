@@ -26,6 +26,7 @@ public class AutoMoveTruck : MonoBehaviour
         if(other.gameObject.tag == "End")
         {
             Debug.Log("END");
+            GameManager.instance.ReloadLevel();
         }
     }
 }

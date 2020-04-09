@@ -111,6 +111,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
+
     public int getLevelNum()
     {
         return (SceneManager.GetActiveScene().buildIndex);
