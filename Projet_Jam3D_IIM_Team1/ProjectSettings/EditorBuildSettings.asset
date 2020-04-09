@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scenes/MenueP.unity
     guid: 8b9cf00d6697b9e4d8283191718976ef
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Scene 1_The Strike 1.unity
+    path: Assets/Scenes/Game Scenes/Scene 1_The Strike.unity
     guid: d7100e102d7815842987ef0501e567e1
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Scene 2_The Neutralifour 1.unity
+    path: Assets/Scenes/Game Scenes/Scene 2_The Neutralifour.unity
     guid: 282e9b96bea293442b5547802e17c7f4
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Scene 3_The Chiken 1.unity
+    path: Assets/Scenes/Game Scenes/Scene 3_The Chiken.unity
     guid: bf516a8935a2d14449385c0d7da58636
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Credit.unity
