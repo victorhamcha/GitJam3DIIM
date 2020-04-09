@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public AudioClip level1Sound;
+    public AudioClip level2Sound;
+    public AudioClip level3Sound;
+    public AudioClip level4Sound;
+
     private Scene1 scene1;
     private Scene2manager scene2Manager;
     private Scene3Manager scene3Manager;
@@ -45,11 +50,19 @@ public class GameManager : MonoBehaviour
                 {
                     scene2Manager = (Scene2manager)GameObject.FindObjectOfType(typeof(Scene2manager));
                 }
+                if (scene2Manager.win)
+                {
+                    NextLevel();
+                }
                 break;
             case 3:
-                if (scene2Manager == null)
+                if (scene3Manager == null)
                 {
-                    scene2Manager = (Scene2manager)GameObject.FindObjectOfType(typeof(Scene2manager));
+                    scene3Manager = (Scene3Manager)GameObject.FindObjectOfType(typeof(Scene3Manager));
+                }
+                if (scene3Manager.win)
+                {
+                    NextLevel();
                 }
                 break;
             case 4:
@@ -65,10 +78,10 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
-        //if current scene is number 1 => Scene1 ? yes => next scene (scene manager) => no then continue
-        //if current scene is number 2 => Scene2Manager ? yes => next scene (scene manager) => no then continue
-        //if current scene is number 3 => Scene3Manager ? yes => next scene (scene manager) => no then continue
-        //if current scene is number 4 => IsTheRecipeGood ? yes => next scene (scene manager) => no then continue
+        //if current scene is number 1 => Scene1 ? yes => next scene (scene manager) : no then continue
+        //if current scene is number 2 => Scene2Manager ? yes => next scene (scene manager) : no then continue
+        //if current scene is number 3 => Scene3Manager ? yes => next scene (scene manager) : no then continue
+        //if current scene is number 4 => IsTheRecipeGood ? yes => next scene (scene manager) : no then continue
     }
 
     void BackMenu()
@@ -101,5 +114,12 @@ public class GameManager : MonoBehaviour
     public int getLevelNum()
     {
         return (SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private IEnumerator NextLevelSound()
+    {
+        //while(audiosource is playing);
+        yield return 0; //wait 1sec
+        //loadnextlevel
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - biere
   - pasteque
   - poulet
+  - Start
+  - End
   layers:
   - Default
   - TransparentFX
