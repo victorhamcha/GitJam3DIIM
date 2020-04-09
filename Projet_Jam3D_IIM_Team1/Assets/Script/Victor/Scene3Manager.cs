@@ -17,10 +17,14 @@ public class Scene3Manager : MonoBehaviour
     private DragAndDropManager drag;
     private bool grabbed;
     public Transform sol;
+<<<<<<< HEAD
 
     [SerializeField]
     private float AngleChicken;
 
+=======
+    public bool win;
+>>>>>>> master
     void Start()
     {
         timer = timerValue;
