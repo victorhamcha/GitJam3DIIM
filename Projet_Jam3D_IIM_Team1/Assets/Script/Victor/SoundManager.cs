@@ -21,18 +21,17 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void PlaySound(int i)
+    public static void PlaySound(AudioSource audio)
     {
-        if(!son[i].isPlaying)
-        {
-            son[i].Play();
-        }
+       
+           audio.Play();
+        
       
         
     }
-    public void StopSound(int i)
+    public static void StopSound(AudioSource audio)
     {
-        son[i].Stop();
+        audio.Stop();
     }
    
 

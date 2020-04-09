@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6350498480726304061
+--- !u!1 &3421716255481045345
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6350498480726304060}
-  - component: {fileID: 6350498480726304055}
-  - component: {fileID: 6350498480726304048}
-  - component: {fileID: 6350498480726304049}
-  - component: {fileID: 6350498480726304050}
-  - component: {fileID: 6350498480726304051}
+  - component: {fileID: 3421716255481045343}
+  - component: {fileID: 3421716255481045340}
+  - component: {fileID: 3421716255481045341}
+  - component: {fileID: 3421716255481045346}
+  - component: {fileID: 3421716255481045347}
+  - component: {fileID: 3421716255481045344}
   m_Layer: 8
   m_Name: Poulet
   m_TagString: poulet
@@ -21,35 +21,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6350498480726304060
+--- !u!4 &3421716255481045343
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
-  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -6.94, y: 1.46, z: -0.5}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_GameObject: {fileID: 3421716255481045345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.47356033, y: 7.38, z: -1.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!33 &6350498480726304055
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3421716255481045340
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
+  m_GameObject: {fileID: 3421716255481045345}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6350498480726304048
+--- !u!23 &3421716255481045341
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
+  m_GameObject: {fileID: 3421716255481045345}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,26 +82,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &6350498480726304049
+--- !u!135 &3421716255481045346
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
+  m_GameObject: {fileID: 3421716255481045345}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6350498480726304050
+--- !u!54 &3421716255481045347
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
+  m_GameObject: {fileID: 3421716255481045345}
   serializedVersion: 2
   m_Mass: 0.3
   m_Drag: 0
@@ -111,20 +111,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6350498480726304051
+--- !u!114 &3421716255481045344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350498480726304061}
+  m_GameObject: {fileID: 3421716255481045345}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 413507ed5ab2ae149be6073f60938fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   throns: 0
-  throwned: {fileID: 6350498480726304061}
+  throwned: {fileID: 3421716255481045345}
   cam: {fileID: 0}
   grabbed: 0
   Destructible: 0

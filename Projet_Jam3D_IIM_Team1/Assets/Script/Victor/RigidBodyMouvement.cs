@@ -49,6 +49,7 @@ public class RigidBodyMouvement : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 isGrounded = false;
+               
             }
             if (Input.GetKeyDown(KeyCode.LeftShift)&&!slide)
             {
