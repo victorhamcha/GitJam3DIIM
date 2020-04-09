@@ -17,6 +17,7 @@ public class Scene3Manager : MonoBehaviour
     private DragAndDropManager drag;
     private bool grabbed;
     public Transform sol;
+    public bool win;
     void Start()
     {
         timer = timerValue;
@@ -51,7 +52,7 @@ public class Scene3Manager : MonoBehaviour
             if(distance<=2f)
             {
                 drag.item = drag.Grab(bombe);
-                Debug.Log("win");
+                win = true;
                 grabbed = true;
             }
          

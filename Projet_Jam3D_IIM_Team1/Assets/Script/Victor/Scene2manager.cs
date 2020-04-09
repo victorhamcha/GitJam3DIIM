@@ -14,6 +14,7 @@ public class Scene2manager : MonoBehaviour
     public Transform four;
     private int vague = 0;
     private List<GameObject> objectSpawned=new List<GameObject>();
+    public bool win;
     void Start()
     {
         couldown = couldownSpawn;
@@ -104,7 +105,7 @@ public class Scene2manager : MonoBehaviour
                 four.gameObject.GetComponent<Renderer>().material.color = Color.green;
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    Debug.Log("win()");
+                    win = true;
                     Destroy(poulet.gameObject);
                 }
             }
