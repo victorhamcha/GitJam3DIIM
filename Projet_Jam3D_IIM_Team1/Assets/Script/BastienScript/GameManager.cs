@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
     public void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        Time.timeScale = 1;
     }
 
     public int getLevelNum()
