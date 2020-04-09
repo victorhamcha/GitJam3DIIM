@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance = null;
     public List<AudioClip> sons = new List<AudioClip>();
     public GameObject sound;
-    public int i;
+    
 
     private void Awake()
     {
@@ -38,10 +38,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void StopSound(GameObject sound)
-    {
-        Destroy(sound);
-    }
+    
    
    
 }
