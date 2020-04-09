@@ -22,7 +22,7 @@ public class DragAndDropManager : MonoBehaviour
     //lancé//
     public float throwForce;
    
-   
+   public Vector3 offSet;
    
     void Update()
     {

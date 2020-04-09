@@ -15,6 +15,8 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 1;
         GamePause = false;
         Cursor.lockState = CursorLockMode.Locked;
+        
+
     }
 
     void Pause()
@@ -23,7 +25,6 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 0;
         GamePause = true;
         Cursor.lockState = CursorLockMode.None;
-
     }
 
     // Update is called once per frame
@@ -32,8 +33,9 @@ public class MenuPause : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-          //  Debug.Log("touche P presser");
-            if(GamePause)
+            Cursor.visible = false;
+            //  Debug.Log("touche P presser");
+            if (GamePause)
             {
                 continuer();
             }
