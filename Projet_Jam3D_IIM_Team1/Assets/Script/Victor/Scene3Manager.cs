@@ -32,7 +32,7 @@ public class Scene3Manager : MonoBehaviour
     {
         timer = timerValue;
         direction = Random.Range(-2, 2);
-        trajectoire = AngleChicken * direction;
+        trajectoire = AngleChicken* direction;
         drag = FindObjectOfType<DragAndDropManager>();
       
     }
@@ -50,7 +50,7 @@ public class Scene3Manager : MonoBehaviour
             go = true;
           
             bombe= Instantiate(poulet, four.position, Quaternion.identity);
-            bombe.GetComponent<Rigidbody>().AddForce(new Vector3(trajectoire, 110*throwPower, -100 * throwPower),ForceMode.Force);
+            bombe.GetComponent<Rigidbody>().AddForce(new Vector3( 100 * throwPower, 110* throwPower, trajectoire),ForceMode.Force);
             
            
         }
