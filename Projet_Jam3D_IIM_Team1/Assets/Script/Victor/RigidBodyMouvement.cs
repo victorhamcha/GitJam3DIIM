@@ -18,11 +18,12 @@ public class RigidBodyMouvement : MonoBehaviour
     public float slideTime=0.8f;
 
     public LayerMask groundMask;
-
+    private SoundManager soundManager;
    
 
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         _rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         speed = normalSpeed;
@@ -49,7 +50,7 @@ public class RigidBodyMouvement : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 isGrounded = false;
-               
+                //soundManager.PlaySound(2,transform);
             }
             if (Input.GetKeyDown(KeyCode.LeftShift)&&!slide)
             {
