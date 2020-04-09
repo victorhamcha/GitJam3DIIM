@@ -1644,6 +1644,7 @@ MonoBehaviour:
   item: {fileID: 0}
   posObject: {fileID: 663274381}
   throwForce: 1600
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!4 &728126640
 Transform:
   m_ObjectHideFlags: 0
