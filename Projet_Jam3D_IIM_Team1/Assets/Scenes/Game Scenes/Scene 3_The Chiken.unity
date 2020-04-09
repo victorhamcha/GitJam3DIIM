@@ -1259,7 +1259,7 @@ MonoBehaviour:
   throwPower: 2.3
   _player: {fileID: 1351855763}
   sol: {fileID: 1240002647}
-  AngleChicken: 0
+  AngleChicken: 180
 --- !u!4 &407252176
 Transform:
   m_ObjectHideFlags: 0
