@@ -30,7 +30,7 @@ public class ObjectsInteractions : MonoBehaviour
             Instantiate(throwned, gameObject.transform.position, Quaternion.identity);
         }
         
-        if(gameObject.tag=="Poulet"&&collision.gameObject.tag=="platforme")
+        if(gameObject.tag=="poulet"&&collision.gameObject.tag=="platforme")
         {
             //Debug.Log("qlkdf");
             UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();

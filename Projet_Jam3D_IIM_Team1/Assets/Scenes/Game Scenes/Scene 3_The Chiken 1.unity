@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6328e45c567e81e499cb22fbc768e4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poulet: {fileID: 6350498480726304061, guid: fd37e580fa1828d459af53be59b7b62b, type: 3}
+  poulet: {fileID: 3421716255481045345, guid: fd37e580fa1828d459af53be59b7b62b, type: 3}
   timerValue: 3
   four: {fileID: 499277953}
   throwPower: 2.3
@@ -2566,6 +2566,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885105280}
   m_CullTransparentMesh: 0
+--- !u!1 &904165517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904165519}
+  - component: {fileID: 904165518}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &904165518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904165517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb7ee4e1f10d64ebaf0f4febe89c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sons:
+  - {fileID: 5069835477348063066, guid: c7640e74f24b01645906710b2417e6c0, type: 3}
+  - {fileID: 7139374750468119929, guid: b31663293bc389e459b0405e2edebe9e, type: 3}
+  - {fileID: 989569146147880104, guid: bc0f63bd442c8b44a94f5659fb838232, type: 3}
+  - {fileID: 892178398404964265, guid: f540fb952c062cb409ea9ae7461903a9, type: 3}
+--- !u!4 &904165519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904165517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4185674, y: 0.49578857, z: 1.1910067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &912426202
 GameObject:
   m_ObjectHideFlags: 0
