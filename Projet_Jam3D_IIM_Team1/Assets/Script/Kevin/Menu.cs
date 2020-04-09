@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
 
     void LoadCredit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Credit", LoadSceneMode.Single);
     }
 

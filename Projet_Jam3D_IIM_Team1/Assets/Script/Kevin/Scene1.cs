@@ -26,7 +26,7 @@ public class Scene1 : MonoBehaviour
     {
         if(aToucherQuille) // si on a toucher la Quilles
         {
-            temps -= Time.deltaTime; // déclance un timeur 
+            temps -= Time.deltaTime; // déclance un timeur
             if(temps <= 0)
             {
                 if (verifQUilles())
@@ -37,7 +37,7 @@ public class Scene1 : MonoBehaviour
                 {
                     Debug.Log("Perdu");
                 }
-                aToucherQuille = false;
+                aToucherQuille = false; 
 
             }
                
