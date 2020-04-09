@@ -2874,12 +2874,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bb7ee4e1f10d64ebaf0f4febe89c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sons:
-  - {fileID: 8300000, guid: d28317f013e131b4d8f86fa3871cef76, type: 3}
-  - {fileID: 8300000, guid: a6981786678c6b84abc0e54ac0a99e38, type: 3}
-  - {fileID: 8300000, guid: f96a05447f1055e43806603a91cbf0e2, type: 3}
-  - {fileID: 8300000, guid: 2fd2004bc2c688a488c772ca1c7446b4, type: 3}
   sound: {fileID: 1352201181098641922, guid: 01c0f76b4e8b51b49a4db9959bf400d9, type: 3}
+  clips:
+  - soundName: Scene1
+    clip: {fileID: 8300000, guid: d28317f013e131b4d8f86fa3871cef76, type: 3}
+  - soundName: Scene2
+    clip: {fileID: 8300000, guid: a6981786678c6b84abc0e54ac0a99e38, type: 3}
+  - soundName: Scene3
+    clip: {fileID: 8300000, guid: f96a05447f1055e43806603a91cbf0e2, type: 3}
 --- !u!4 &1205686812
 Transform:
   m_ObjectHideFlags: 0

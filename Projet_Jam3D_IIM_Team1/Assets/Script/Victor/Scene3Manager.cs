@@ -34,7 +34,7 @@ public class Scene3Manager : MonoBehaviour
         direction = Random.Range(-2, 2);
         trajectoire = AngleChicken* direction;
         drag = FindObjectOfType<DragAndDropManager>();
-      
+        FindObjectOfType<SoundManager>().PlaySound("Scene3", transform);
     }
 
     // Update is called once per frame
