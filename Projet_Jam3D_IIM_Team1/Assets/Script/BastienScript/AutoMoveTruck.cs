@@ -5,7 +5,7 @@ using UnityEngine;
 public class AutoMoveTruck : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
-    [SerializeField] private GameObject[] ToSpawn;
+    [SerializeField] private GameObject[] toSpawn;
 
     // Update is called once per frame
     void Update()
@@ -18,10 +18,14 @@ public class AutoMoveTruck : MonoBehaviour
         Debug.Log("Hi");
         if(other.gameObject.tag == "Start")
         {
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < toSpawn.Length; i++)
             {
-
+                toSpawn[i].SetActive(true);
             }
+        }
+        if(other.gameObject.tag == "End")
+        {
+            Debug.Log("END");
         }
     }
 }
