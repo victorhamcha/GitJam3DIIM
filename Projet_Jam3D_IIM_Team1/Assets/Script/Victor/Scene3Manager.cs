@@ -17,11 +17,15 @@ public class Scene3Manager : MonoBehaviour
     private DragAndDropManager drag;
     private bool grabbed;
     public Transform sol;
+
+    [SerializeField]
+    private float AngleChicken;
+
     void Start()
     {
         timer = timerValue;
         direction = Random.Range(-2, 2);
-        trajectoire = 60 * direction;
+        trajectoire = AngleChicken * direction;
         drag = FindObjectOfType<DragAndDropManager>();
       
     }
