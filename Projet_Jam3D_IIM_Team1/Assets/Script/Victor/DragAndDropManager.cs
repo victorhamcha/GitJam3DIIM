@@ -21,8 +21,8 @@ public class DragAndDropManager : MonoBehaviour
     private ObjectsInteractions theObject;
     //lancé//
     public float throwForce;
-   
-   
+
+    public Vector3 offSet;
    
     void Update()
     {
@@ -133,7 +133,7 @@ public class DragAndDropManager : MonoBehaviour
     {
         item.GetComponent<Renderer>().material = grabbedOriginalMaterial;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.GetComponent<Rigidbody>().AddForce( Camera.main.transform.forward* throwForce);
+        item.GetComponent<Rigidbody>().AddForce( Camera.main.transform.forward* throwForce+offSet);
         item.transform.SetParent(null);
         holding = false;
         item.GetComponent<Collider>().isTrigger = false;
