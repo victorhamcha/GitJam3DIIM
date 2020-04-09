@@ -18,9 +18,20 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Credit", LoadSceneMode.Single);
     }
 
-    void Debut()
+    public void NextLevel()
     {
-        SceneManager.LoadScene("SceneGeneral", LoadSceneMode.Single);
+        if (SceneManager.sceneCountInBuildSettings != SceneManager.GetActiveScene().buildIndex)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+                menuPauseUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Debug.Log("You've reach the last level");
+            LoadCredit();
+        }
     }
 
     void Reprendre()

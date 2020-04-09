@@ -46,14 +46,14 @@ public class Scene1 : MonoBehaviour
 
     }
 
-    bool verifQUilles()
+    public bool verifQUilles()
     {
         for(int i = 0; i < Quilles.Length; i++)     // on va verifier la rotation de chaque Quille
         {
             float rotationActuelle = Quilles[i].transform.eulerAngles.x;       // on stocke la rotation actuelle 
             float rotationInitial = initialRotations[i];                       // on stocke la rotation initial
             float diffRotation = rotationActuelle - rotationInitial;            // on calcul la différence entre les 2 
-            if(Mathf.Abs(diffRotation) < angleCoucher) // valeur absolue => on regarde si la rotation est inférieur a l'angle voulue
+            if(Mathf.Abs(diffRotation) < angleCoucher && !aToucherQuille) // valeur absolue => on regarde si la rotation est inférieur a l'angle voulue
             {
                 return false; // on retourne false si toute les Quilles ne sont pas tomber
             }
@@ -68,7 +68,7 @@ public class Scene1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("biere"))
         {
-            //Debug.Log("toucher");   //=> collision entre la pasteque et la Quille
+            Debug.Log("toucher");   //=> collision entre la pasteque et la Quille
             aToucherQuille = true; 
 
 

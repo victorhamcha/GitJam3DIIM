@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum GameState { MAIN_MENU, IN_GAME }
+//public enum GameState { MAIN_MENU, IN_GAME }
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-
-    //define a list
-    public static List<GameObject> myListObjects = new List<GameObject>();
-    //Number of objects spawned
-    public static int numSpawned = 0;
-    [SerializeField] private int numToSpawn = 5;
 
     private void Awake()
     {
@@ -29,41 +23,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Important note: place your prefabs folder(or levels or whatever) 
-        //in a folder called "Resources" like this "Assets/Resources/Prefabs"
-        Object[] subListObjects = Resources.LoadAll("Prefabs", typeof(GameObject));
-        //This may be sloppy
-        foreach (GameObject subListObject in subListObjects)
-        {
-            GameObject lo = (GameObject)subListObject;
 
-            myListObjects.Add(lo);
-        }
-        Vector3 startPosition = transform.position;
-    }
-
-    void SpawnRandomObject()
-    {
-        //spawns item in array position between 0 and 100
-        //int whichItem = Random.Range(0, 100);
-
-        GameObject myObj = Instantiate(myListObjects[0]) as GameObject;
-        //myObj.GetComponent<Rigidbody>().isKinematic = true;
-
-        numSpawned++;
-
-        myObj.transform.position = transform.position;
     }
 
     void Update()
     {
-        if (numToSpawn > numSpawned)
-        {
-            //where your instantiated object spawns from
-            transform.position = new Vector3(5, 10, 0);
-            SpawnRandomObject();
-        }
-
+        //if current scene is number 1 => Scene1 ? yes => next scene (scene manager) => no then continue
+        //if current scene is number 2 => Scene2Manager ? yes => next scene (scene manager) => no then continue
+        //if current scene is number 3 => Scene3Manager ? yes => next scene (scene manager) => no then continue
         //if current scene is number 4 => IsTheRecipeGood ? yes => next scene (scene manager) => no then continue
     }
 }
