@@ -34,6 +34,11 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public int getLevelNum()
+    {
+        return (SceneManager.GetActiveScene().buildIndex);
+    }
+
     void Reprendre()
     {
         menuPauseUI.SetActive(false);
