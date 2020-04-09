@@ -19,6 +19,9 @@ public class Scene3Manager : MonoBehaviour
     public Transform sol;
 <<<<<<< HEAD
 
+    public bool win;
+<<<<<<< HEAD
+
     [SerializeField]
     private float AngleChicken;
 
