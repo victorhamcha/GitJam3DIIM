@@ -1255,11 +1255,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poulet: {fileID: 6350498480726304061, guid: fd37e580fa1828d459af53be59b7b62b, type: 3}
   timerValue: 3
-  four: {fileID: 1110353765}
+  four: {fileID: 499277953}
   throwPower: 2.3
   _player: {fileID: 1351855763}
   sol: {fileID: 1240002647}
-  AngleChicken: 0
+  win: 0
+  AngleChicken: 60
 --- !u!4 &407252176
 Transform:
   m_ObjectHideFlags: 0
@@ -1370,7 +1371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499277952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.8, y: 1.25, z: -0.5}
+  m_LocalPosition: {x: -4.72, y: 1.86, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 225855053}
@@ -2732,12 +2733,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069695974}
   m_CullTransparentMesh: 0
---- !u!4 &1110353765 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4522273781448695451, guid: 79eaf930da62c6946ae1bb6033ed07f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 56995472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1163428906
 GameObject:
   m_ObjectHideFlags: 0
