@@ -15,13 +15,18 @@ public class InteractionManager : MonoBehaviour
     [Range(0.1f, 2)] [SerializeField] private float timescaleValue = 1;
     [Range (1,5)] [SerializeField] private float effectDuration = 1;
     [SerializeField] private float timeBeforeEffect = 0f;
+    [SerializeField] private int numberOfEffect = 1;
 
     //https://answers.unity.com/questions/1284988/custom-inspector-2.html
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == tagForTrigger)
-            StartCoroutine(TimeScaleEffect(timescaleValue, effectDuration, timeBeforeEffect));
+        if (other.gameObject.tag == tagForTrigger)
+            if (numberOfEffect > 0)
+            {
+                numberOfEffect--;
+                StartCoroutine(TimeScaleEffect(timescaleValue, effectDuration, timeBeforeEffect));
+            }
     }
 
     private IEnumerator TimeScaleEffect(float tsv, float timer, float countdown)
