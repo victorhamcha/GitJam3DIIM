@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 400680209}
+      - m_Target: {fileID: 1000119006}
         m_MethodName: SendMessage
         m_Mode: 5
         m_Arguments:
@@ -2270,7 +2270,6 @@ GameObject:
   - component: {fileID: 1152414816}
   - component: {fileID: 1152414815}
   - component: {fileID: 1152414814}
-  - component: {fileID: 1152414813}
   m_Layer: 5
   m_Name: Reprendre
   m_TagString: Untagged
@@ -2298,19 +2297,6 @@ RectTransform:
   m_AnchoredPosition: {x: -153.5, y: 2.5}
   m_SizeDelta: {x: 130.1, y: 36.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1152414813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152414811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125275192e80b614e9223403015d64c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPauseUI: {fileID: 543586073}
 --- !u!114 &1152414814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2354,7 +2340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1152414813}
+      - m_Target: {fileID: 1719734189}
         m_MethodName: SendMessage
         m_Mode: 5
         m_Arguments:
@@ -2362,7 +2348,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Reprendre
+          m_StringArgument: continuer
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1152414815
@@ -2782,7 +2768,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1424808098}
+      - m_Target: {fileID: 1000119006}
         m_MethodName: SendMessage
         m_Mode: 5
         m_Arguments:

@@ -28,45 +28,52 @@ public class DragAndDropManager : MonoBehaviour
     {
 
 
-        if(_selection!=null&&!_in)
+        
+        
+        if(Time.timeScale!=0)
         {
-            Renderer selectionRenderer = _selection.GetComponent<Renderer>();
-            selectionRenderer.material = originalMaterial;
-            _selection = null;
-
-    
-          
-
-        }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, distanceTOObjects,dragabble))
-        {
-            Transform selection = hit.transform;
-            Renderer selectionRenderer = selection.GetComponent<Renderer>();
-            if(selectionRenderer!=null)
+            if (_selection != null && !_in)
             {
-
-                originalMaterial = selection.gameObject.GetComponent<ObjectsInteractions>().originalMaterial;
-                selectionRenderer.material = SelectableMaterial;
+                Renderer selectionRenderer = _selection.GetComponent<Renderer>();
+                selectionRenderer.material = originalMaterial;
+                _selection = null;
             }
-            if(Input.GetKeyDown(KeyCode.Mouse0))
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, distanceTOObjects, dragabble))
             {
-                item = Grab(hit.transform.gameObject);
-                
-               // item.GetComponent<Rigidbody>().useGravity = false;
-                
-            }
-            _selection = selection;
-            _in = true;
-           
-        }
-        else
-        {
-            _in = false;
-        }
+                Transform selection = hit.transform;
+                Renderer selectionRenderer = selection.GetComponent<Renderer>();
+                if (selectionRenderer != null)
+                {
 
-        if(holding)
+                    originalMaterial = selection.gameObject.GetComponent<ObjectsInteractions>().originalMaterial;
+                    selectionRenderer.material = SelectableMaterial;
+                }
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    if (holding)
+                    {
+                        Drop();
+                    }
+                    item = Grab(hit.transform.gameObject);
+
+                    // item.GetComponent<Rigidbody>().useGravity = false;
+
+                }
+
+                _selection = selection;
+                _in = true;
+
+            }
+            else
+            {
+                _in = false;
+            }
+        }
+       
+
+        if(holding&&Time.timeScale!=0)
         {
           
 

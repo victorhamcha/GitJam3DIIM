@@ -55,7 +55,7 @@ public class Scene3Manager : MonoBehaviour
             if(distance<=2f)
             {
                 drag.item = drag.Grab(bombe);
-                Debug.Log("win");
+                win = true;
                 grabbed = true;
             }
          
