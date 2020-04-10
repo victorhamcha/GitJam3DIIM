@@ -37,16 +37,20 @@ public class Scene2manager : MonoBehaviour
                     } 
                 case 1:
                     {
-                       GameObject spawned= Instantiate(spawnable, spawners[0].position, Quaternion.Euler(0,0,-90));
+                        GameObject spawned = Instantiate(spawnable, spawners[0].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned1 = Instantiate(spawnable, spawners[4].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned2 = Instantiate(spawnable, spawners[9].position, Quaternion.Euler(0, 0, -90));
                         objectSpawned.Add(spawned);
+                        objectSpawned.Add(spawned1);
+                        objectSpawned.Add(spawned2);
 
-                       break;
+                        break;
                     }
                 case 2:
                     {
                         GameObject spawned=Instantiate(spawnable, spawners[1].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned1=Instantiate(spawnable, spawners[2].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned2 =Instantiate(spawnable, spawners[3].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned1=Instantiate(spawnable, spawners[5].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned2 =Instantiate(spawnable, spawners[13].position, Quaternion.Euler(0, 0, -90));
                         objectSpawned.Add(spawned);
                         objectSpawned.Add(spawned1);
                         objectSpawned.Add(spawned2);
@@ -55,9 +59,9 @@ public class Scene2manager : MonoBehaviour
                     }
                 case 3:
                     {
-                        GameObject spawned= Instantiate(spawnable, spawners[4].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned1= Instantiate(spawnable, spawners[5].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned2= Instantiate(spawnable, spawners[6].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned= Instantiate(spawnable, spawners[12].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned1= Instantiate(spawnable, spawners[6].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned2= Instantiate(spawnable, spawners[14].position, Quaternion.Euler(0, 0, -90));
                         objectSpawned.Add(spawned);
                         objectSpawned.Add(spawned1);
                         objectSpawned.Add(spawned2);
@@ -66,19 +70,23 @@ public class Scene2manager : MonoBehaviour
                 case 4:
                     {
 
-                        GameObject spawned=Instantiate(spawnable, spawners[7].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned1=Instantiate(spawnable, spawners[8].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned = Instantiate(spawnable, spawners[2].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned1 = Instantiate(spawnable, spawners[7].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned2 = Instantiate(spawnable, spawners[3].position, Quaternion.Euler(0, 0, -90));
                         objectSpawned.Add(spawned);
                         objectSpawned.Add(spawned1);
-                  
+                        objectSpawned.Add(spawned2);
+
                         break;
                     }
                 case 5:
                     {
-                        GameObject spawned=Instantiate(spawnable, spawners[9].position, Quaternion.Euler(0, 0, -90));
-                        GameObject spawned1= Instantiate(spawnable, spawners[10].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned = Instantiate(spawnable, spawners[11].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned1 = Instantiate(spawnable, spawners[8].position, Quaternion.Euler(0, 0, -90));
+                        GameObject spawned2 = Instantiate(spawnable, spawners[10].position, Quaternion.Euler(0, 0, -90));
                         objectSpawned.Add(spawned);
                         objectSpawned.Add(spawned1);
+                        objectSpawned.Add(spawned2);
                         vague = 0;
                         break;
                     }
