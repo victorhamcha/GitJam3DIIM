@@ -1514,7 +1514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499277952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.61, y: 1.31, z: 1.42}
+  m_LocalPosition: {x: -5.05, y: 1.31, z: 1.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 225855053}
@@ -1634,7 +1634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525202698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.32, y: 0.69, z: 1.71}
+  m_LocalPosition: {x: -5.35, y: 0.69, z: 1.71}
   m_LocalScale: {x: 1, y: 4.5372, z: 1}
   m_Children: []
   m_Father: {fileID: 225855053}
@@ -3003,7 +3003,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 3
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -7802,10 +7802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e9be4ae57f42247aa70caf07097ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1Sound: {fileID: 0}
-  level2Sound: {fileID: 0}
-  level3Sound: {fileID: 0}
-  level4Sound: {fileID: 0}
 --- !u!4 &1104996390
 Transform:
   m_ObjectHideFlags: 0
