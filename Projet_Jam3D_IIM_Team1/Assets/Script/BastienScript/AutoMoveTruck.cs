@@ -16,6 +16,11 @@ public class AutoMoveTruck : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hi");
+        if(other.gameObject.tag == "Player")
+        {
+            Debug.Log("You died");
+            GameManager.instance.ReloadLevel();
+        }
         if(other.gameObject.tag == "Start")
         {
             for (int i = 0; i < toSpawn.Length; i++)
