@@ -76,7 +76,7 @@ public class RigidBodyMouvement : MonoBehaviour
 
             if(mouved&&!inMouvement)
             {
-               //LOOOOOOSE
+                FindObjectOfType<GameManager>().ReloadLevel();
             }
            
         }

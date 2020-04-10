@@ -12982,6 +12982,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: WallParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 6604569778807718263, guid: 9ec706e56358f084eae819367fe3bdfc,
+        type: 3}
+      propertyPath: clips.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1441a4bcaf0b7e74e8ca35ec0e176e1e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ec706e56358f084eae819367fe3bdfc, type: 3}
 --- !u!1001 &8213292608908216062
@@ -12991,6 +12996,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8213292608901720381, guid: 252cf99806f0ed940bb7c22960d1838b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.199951
+      objectReference: {fileID: 0}
     - target: {fileID: 8213292609187886137, guid: 252cf99806f0ed940bb7c22960d1838b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -13110,6 +13120,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213292609708078374, guid: 252cf99806f0ed940bb7c22960d1838b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -344.59998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213292609708078374, guid: 252cf99806f0ed940bb7c22960d1838b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51.80005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213292610280801698, guid: 252cf99806f0ed940bb7c22960d1838b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.19995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252cf99806f0ed940bb7c22960d1838b, type: 3}
