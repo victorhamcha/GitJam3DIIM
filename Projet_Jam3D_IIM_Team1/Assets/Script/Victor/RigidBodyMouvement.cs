@@ -12,13 +12,15 @@ public class RigidBodyMouvement : MonoBehaviour
     private float speed;
     private Rigidbody _rb;
     private CapsuleCollider col;
-    bool slide = false;
+   
+    private bool slide = false;
     public bool isGrounded = true;
     public float slideTimer;
     public float slideTime=0.8f;
 
     public LayerMask groundMask;
-    
+    [SerializeField]
+    bool mouved = false;
    
 
     void Start()
@@ -40,6 +42,9 @@ public class RigidBodyMouvement : MonoBehaviour
             float z = Input.GetAxis("Vertical");
 
             Vector3 move = (transform.right * x + transform.forward * z);
+
+            bool inMouvement = move.x+move.z+move.y !=0 ;
+            
             move = Vector3.ClampMagnitude(move, 1);
             //Vector3 move = new Vector3(x, 0, z);
             //_rb.AddForce(move*speed,ForceMode.VelocityChange); //Voiture
@@ -59,8 +64,20 @@ public class RigidBodyMouvement : MonoBehaviour
                 speed = slideSpeed;
                 slide = true;
             }
+            if(inMouvement&&!mouved)
+            {
+                mouved = true;
+            }
 
+            if(mouved&&!inMouvement)
+            {
+                Debug.Log("loose");
+            }
            
+        }
+        else
+        {
+            mouved = false;
         }
 
         if(slide)
