@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6604569778807718262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6604569778807718256}
+  - component: {fileID: 6604569778807718263}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6604569778807718256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604569778807718262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.097169, y: 6.7693253, z: -7.3655806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6604569778807718263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604569778807718262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb7ee4e1f10d64ebaf0f4febe89c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 1352201181098641922, guid: 01c0f76b4e8b51b49a4db9959bf400d9, type: 3}
+  clips:
+  - soundName: Scene1
+    clip: {fileID: 8300000, guid: d28317f013e131b4d8f86fa3871cef76, type: 3}
+  - soundName: Scene2
+    clip: {fileID: 8300000, guid: a6981786678c6b84abc0e54ac0a99e38, type: 3}
+  - soundName: Scene3
+    clip: {fileID: 8300000, guid: f96a05447f1055e43806603a91cbf0e2, type: 3}
+  - soundName: Sad1
+    clip: {fileID: 8300000, guid: 465d6e7a9d4eaed468e4db1d0ce41e46, type: 3}
+  - soundName: Sad2
+    clip: {fileID: 8300000, guid: 51af29d480792c84f95ad7330d6b0391, type: 3}
+  - soundName: Epique
+    clip: {fileID: 8300000, guid: bf975cc7c31ba354da4500c3baf2cb1a, type: 3}
+  - soundName: Scene4
+    clip: {fileID: 8300000, guid: 2fd2004bc2c688a488c772ca1c7446b4, type: 3}
+  - soundName: "D\xE9faite1"
+    clip: {fileID: 8300000, guid: e9c51aab1395f244ea04f3166b6fab1a, type: 3}
+  - soundName: "D\xE9faite2"
+    clip: {fileID: 8300000, guid: d5f72307754402f4fb210a789456b9e3, type: 3}
+  - soundName: klaxoon
+    clip: {fileID: 8300000, guid: 8e0a8b87ab2ae724fad2304e5934af7b, type: 3}
+  - soundName: Wall
+    clip: {fileID: 8300000, guid: 2f2c59350c6a75c4db082a787b5ab8c8, type: 3}
+  - soundName: Strike
+    clip: {fileID: 8300000, guid: 7c51541c88ddaa74ca9e24928f38a4de, type: 3}
+  - soundName: Truck
+    clip: {fileID: 8300000, guid: 43ccfed8fc19054479074e880f2cdc5d, type: 3}
+  - soundName: Grenade
+    clip: {fileID: 8300000, guid: bf119238edb04e142b3374cace8cdd6b, type: 3}
