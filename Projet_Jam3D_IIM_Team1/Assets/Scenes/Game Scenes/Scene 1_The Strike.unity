@@ -557,6 +557,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 10170_Carrot_v01_L3
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c02a985c164dea4981db773cb0c3cec,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToDestroyOnHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c02a985c164dea4981db773cb0c3cec, type: 3}
 --- !u!4 &309706348 stripped
@@ -928,6 +933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 10170_Carrot_v01_L3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c02a985c164dea4981db773cb0c3cec,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToDestroyOnHit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c02a985c164dea4981db773cb0c3cec, type: 3}
@@ -1721,6 +1731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 10170_Carrot_v01_L3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c02a985c164dea4981db773cb0c3cec,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToDestroyOnHit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c02a985c164dea4981db773cb0c3cec, type: 3}
@@ -7413,6 +7428,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1762466435}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1762466437 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 837769512, guid: daa9334f617fa894d9a108c68b15039c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762466435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1812669246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8915135796281303204, guid: 79eaf930da62c6946ae1bb6033ed07f9,
@@ -7671,6 +7692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 10170_Carrot_v01_L3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5c02a985c164dea4981db773cb0c3cec,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToDestroyOnHit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c02a985c164dea4981db773cb0c3cec, type: 3}
