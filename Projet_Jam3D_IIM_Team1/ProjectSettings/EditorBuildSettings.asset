@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Scenes/Scene 2_The Neutralifour.unity
     guid: 282e9b96bea293442b5547802e17c7f4
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Scene 3_The Chiken.unity
+    path: Assets/Scenes/Game Scenes/Scene 3_The Chicken.unity
     guid: 5fdd646fba8b3a44b9a34fa6b656fed6
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Scene 4_The Sauce.unity

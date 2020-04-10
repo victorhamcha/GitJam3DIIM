@@ -44,6 +44,10 @@ public class RigidBodyMouvement : MonoBehaviour
             Vector3 move = (transform.right * x + transform.forward * z);
 
             bool inMouvement = move.x+move.z+move.y !=0 ;
+            if((Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))&&!mouved)
+            {
+                mouved = true;
+            }
             
             move = Vector3.ClampMagnitude(move, 1);
             //Vector3 move = new Vector3(x, 0, z);
@@ -64,10 +68,7 @@ public class RigidBodyMouvement : MonoBehaviour
                 speed = slideSpeed;
                 slide = true;
             }
-            if(inMouvement&&!mouved)
-            {
-                mouved = true;
-            }
+           
 
             if(mouved&&!inMouvement)
             {
