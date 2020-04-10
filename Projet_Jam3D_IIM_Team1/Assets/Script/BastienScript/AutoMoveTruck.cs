@@ -33,5 +33,12 @@ public class AutoMoveTruck : MonoBehaviour
             Debug.Log("END");
             GameManager.instance.ReloadLevel();
         }
+        if (other.gameObject.CompareTag("WallParticles"))
+        {
+            Debug.Log("Oui");
+            GameObject WallP = other.gameObject;
+            ParticleSystem Psystem = WallP.GetComponent<ParticleSystem>();
+            Psystem.Play();
+        }
     }
 }
