@@ -21,6 +21,7 @@ public class Recipe : MonoBehaviour
             Debug.Log("Good ingredient");
             currentIngredient[i] = objCol;
             objCol.SetActive(false); // deactivate the ingredient as it is in the recipe
+            FindObjectOfType<SoundManager>().PlaySound("Grenade",transform);
         }
         else if(!IsNotAlreadyInRecipe(objCol))
         {

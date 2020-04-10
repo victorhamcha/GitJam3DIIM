@@ -25,7 +25,7 @@ public class RigidBodyMouvement : MonoBehaviour
 
     void Start()
     {
-       
+        FindObjectOfType<SoundManager>().PlaySound("Epique");
         _rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         speed = normalSpeed;
