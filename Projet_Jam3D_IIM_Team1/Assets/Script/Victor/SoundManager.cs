@@ -59,8 +59,10 @@ public class SoundManager : MonoBehaviour
        lesond.GetComponent<TheSound>().soundName = soundName;
        
     }
-   
-    
+
+ 
+
+
 
     public float SoundWithHisTime(string soundName)
     {

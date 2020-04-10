@@ -7,15 +7,19 @@ public class TheSound : MonoBehaviour
     public SoundManager soundManager;
     public AudioSource audioSource;
     public string soundName;
+   
     void Start()
     {
        
         soundManager = FindObjectOfType<SoundManager>();
         
         audioSource = GetComponent<AudioSource>();
+       
         audioSource.clip = soundManager.soundGenerator[soundName];
         audioSource.Play();
+        Debug.Log(audioSource.volume);
         Destroy(gameObject, audioSource.clip.length);
+
     }
     private void Awake()
     {

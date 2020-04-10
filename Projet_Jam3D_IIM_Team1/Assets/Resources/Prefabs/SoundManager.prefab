@@ -73,3 +73,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 43ccfed8fc19054479074e880f2cdc5d, type: 3}
   - soundName: Grenade
     clip: {fileID: 8300000, guid: bf119238edb04e142b3374cace8cdd6b, type: 3}
+  - soundName: Marcher
+    clip: {fileID: 8300000, guid: 9299d086b7fa4fd4cb2c8d76ff0f6ebc, type: 3}
+  - soundName: Saut
+    clip: {fileID: 8300000, guid: 6911473ef9ed204439d3a97bb5b841f2, type: 3}
+  - soundName: jeter
+    clip: {fileID: 8300000, guid: 19c2f7f94a7183643a813ddc813f84d6, type: 3}
+  - soundName: Attraper
+    clip: {fileID: 8300000, guid: c37099f92d5cc244b8975c08cee1d034, type: 3}

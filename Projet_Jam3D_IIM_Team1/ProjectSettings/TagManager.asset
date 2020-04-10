@@ -12,6 +12,7 @@ TagManager:
   - Start
   - End
   - WallParticles
+  - ToDestroyOnHit
   layers:
   - Default
   - TransparentFX

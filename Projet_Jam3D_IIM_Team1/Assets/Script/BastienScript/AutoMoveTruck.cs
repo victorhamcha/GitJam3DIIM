@@ -40,5 +40,10 @@ public class AutoMoveTruck : MonoBehaviour
             ParticleSystem Psystem = WallP.GetComponent<ParticleSystem>();
             Psystem.Play();
         }
+
+        if(other.gameObject.tag == "ToDestroyOnHit")
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
