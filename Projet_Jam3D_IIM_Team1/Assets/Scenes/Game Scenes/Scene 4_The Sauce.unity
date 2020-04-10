@@ -1864,7 +1864,7 @@ MonoBehaviour:
   item: {fileID: 0}
   posObject: {fileID: 663274381}
   throwForce: 1600
-  offSet: {x: 0, y: 0, z: 0}
+  visor: {fileID: 837769512}
 --- !u!4 &728126640
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,6 +2371,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c3e45942175903e46988c9ee18676af9,
     type: 3}
   m_PrefabInstance: {fileID: 810876537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &837769512 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 837769512, guid: daa9334f617fa894d9a108c68b15039c,
+    type: 3}
+  m_PrefabInstance: {fileID: 779306794}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &868492416
 GameObject:
