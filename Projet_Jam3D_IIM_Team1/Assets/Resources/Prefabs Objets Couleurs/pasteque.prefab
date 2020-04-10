@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1785658997189863543}
   - component: {fileID: 7321984219925992001}
   - component: {fileID: 3936252391732522680}
+  - component: {fileID: 1549186879294623804}
   m_Layer: 0
   m_Name: pasteque
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &1549186879294623804
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358760346166598244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1447356
+  m_Height: 0.33031887
+  m_Direction: 0
+  m_Center: {x: -0.018088698, y: -0.034134567, z: 0.14744976}

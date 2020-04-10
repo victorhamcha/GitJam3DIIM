@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2984496159294816738}
   - component: {fileID: 6066359482035092436}
   - component: {fileID: 507922306732771117}
+  - component: {fileID: 9171288654350894767}
   m_Layer: 0
   m_Name: plan_travail_porte
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9171288654350894767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247391498710545393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4008019, z: 0.40000007}
+  m_Center: {x: 0.000000014901161, y: -0.00040091583, z: 0.20000003}

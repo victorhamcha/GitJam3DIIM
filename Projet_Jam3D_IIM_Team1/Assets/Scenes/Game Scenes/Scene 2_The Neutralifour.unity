@@ -355,7 +355,7 @@ MonoBehaviour:
   - {fileID: 204375065}
   - {fileID: 1631076930}
   - {fileID: 1288961082}
-  spawnable: {fileID: 3664756996034122440, guid: f723118fcd8983e428ad6868901468a2,
+  spawnable: {fileID: 5740729018093900436, guid: 3adc485ea1ed40b4fa5c0880fd48f473,
     type: 3}
   dragAndDrop: {fileID: 1856589995}
   couldownSpawn: 1
