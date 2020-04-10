@@ -359,8 +359,8 @@ MonoBehaviour:
     type: 3}
   dragAndDrop: {fileID: 1856589995}
   couldownSpawn: 1
-  poulet: {fileID: 0}
-  four: {fileID: 0}
+  poulet: {fileID: 1976862976}
+  four: {fileID: 616794202}
   win: 0
 --- !u!4 &66525131
 Transform:
@@ -2162,6 +2162,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79eaf930da62c6946ae1bb6033ed07f9, type: 3}
+--- !u!4 &616794202 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3232371302082879388, guid: 79eaf930da62c6946ae1bb6033ed07f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 616794201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &616794203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8915135796281303204, guid: 79eaf930da62c6946ae1bb6033ed07f9,
@@ -5534,6 +5540,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca543d0aabcb04b478f6e610f3f189e3, type: 3}
+--- !u!4 &1976862976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6145896539309039352, guid: ca543d0aabcb04b478f6e610f3f189e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976862975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2023976048
 PrefabInstance:
   m_ObjectHideFlags: 0
