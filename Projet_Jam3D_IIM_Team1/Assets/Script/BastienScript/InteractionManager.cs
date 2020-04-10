@@ -17,6 +17,8 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private float timeBeforeEffect = 0f;
     [SerializeField] private int numberOfEffect = 1;
 
+    private IEnumerator timeScaleCoroutine = null;
+
     //https://answers.unity.com/questions/1284988/custom-inspector-2.html
 
     private void OnTriggerEnter(Collider other)
@@ -25,8 +27,15 @@ public class InteractionManager : MonoBehaviour
             if (numberOfEffect > 0)
             {
                 numberOfEffect--;
-                StartCoroutine(TimeScaleEffect(timescaleValue, effectDuration, timeBeforeEffect));
+                timeScaleCoroutine = TimeScaleEffect(timescaleValue, effectDuration, timeBeforeEffect);
+                StartCoroutine(timeScaleCoroutine);
             }
+    }
+
+    private void Update()
+    {
+        if (GameManager.instance.IsLevelComplete())
+            StopCoroutine(timeScaleCoroutine);
     }
 
     private IEnumerator TimeScaleEffect(float tsv, float timer, float countdown)

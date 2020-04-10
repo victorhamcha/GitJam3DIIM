@@ -8,15 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public AudioClip level1Sound;
-    public AudioClip level2Sound;
-    public AudioClip level3Sound;
-    public AudioClip level4Sound;
-
     private Scene1 scene1;
     private Scene2manager scene2Manager;
     private Scene3Manager scene3Manager;
     private Recipe recipe;
+
+    private bool once = false;
+    private bool levelCompleted = false;
 
     private void Awake()
     {
@@ -42,7 +40,12 @@ public class GameManager : MonoBehaviour
                 }
                 if(scene1.verifQUilles())
                 {
-                    NextLevel();
+                    if (!once)
+                    {
+                        levelCompleted = true;
+                        StartCoroutine("PlayNextLevelSound");
+                        once = true;
+                    }
                 }
                 break;
             case 2:
@@ -52,7 +55,11 @@ public class GameManager : MonoBehaviour
                 }
                 if (scene2Manager.win)
                 {
-                    NextLevel();
+                    if (!once)
+                    {
+                        StartCoroutine("PlayNextLevelSound");
+                        once = true;
+                    }
                 }
                 break;
             case 3:
@@ -62,7 +69,11 @@ public class GameManager : MonoBehaviour
                 }
                 if (scene3Manager.win)
                 {
-                    NextLevel();
+                    if (!once)
+                    {
+                        StartCoroutine("PlayNextLevelSound");
+                        once = true;
+                    }
                 }
                 break;
             case 4:
@@ -122,10 +133,17 @@ public class GameManager : MonoBehaviour
         return (SceneManager.GetActiveScene().buildIndex);
     }
 
-    private IEnumerator NextLevelSound()
+    private IEnumerator PlayNextLevelSound()
     {
-        //while(audiosource is playing);
-        yield return 0; //wait 1sec
-        //loadnextlevel
+        Time.timeScale = 0f;
+        SoundManager.instance.PlaySound("Scene" + (SceneManager.GetActiveScene().buildIndex + 1), this.transform);
+        yield return new WaitForSecondsRealtime(SoundManager.instance.SoundWithHisTime("Scene" + (SceneManager.GetActiveScene().buildIndex + 1)) + 0.5f);
+        NextLevel();
+        once = false;
+    }
+
+    public bool IsLevelComplete()
+    {
+        return levelCompleted;
     }
 }

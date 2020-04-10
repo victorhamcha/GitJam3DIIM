@@ -22,7 +22,7 @@ public class DragAndDropManager : MonoBehaviour
     //lancé//
     public float throwForce;
    
-   public Vector3 offSet;
+   public Transform visor;
    
     void Update()
     {
@@ -132,6 +132,7 @@ public class DragAndDropManager : MonoBehaviour
     private void Throw()
     {
         item.GetComponent<Renderer>().material = grabbedOriginalMaterial;
+        item.transform.position =visor.position;
         item.GetComponent<Rigidbody>().isKinematic = false;
         item.GetComponent<Rigidbody>().AddForce( Camera.main.transform.forward* throwForce);
         item.transform.SetParent(null);
