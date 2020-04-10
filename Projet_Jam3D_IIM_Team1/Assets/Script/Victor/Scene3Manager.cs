@@ -17,7 +17,7 @@ public class Scene3Manager : MonoBehaviour
     private DragAndDropManager drag;
     private bool grabbed;
     public Transform sol;
-
+    public float SoundTime;
 
     public bool win;
 
@@ -34,7 +34,7 @@ public class Scene3Manager : MonoBehaviour
         direction = Random.Range(-2, 2);
         trajectoire = AngleChicken* direction;
         drag = FindObjectOfType<DragAndDropManager>();
-        FindObjectOfType<SoundManager>().PlaySound("Scene3", transform);
+        SoundTime= FindObjectOfType<SoundManager>().SoundWithHisTime("Scene3");
     }
 
     // Update is called once per frame

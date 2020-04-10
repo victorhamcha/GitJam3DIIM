@@ -45,16 +45,33 @@ public class SoundManager : MonoBehaviour
       
         
     }
+    public void PlaySound(string soundName)
+    {
 
+        GameObject lesond = Instantiate(sound);
+        lesond.GetComponent<TheSound>().soundName = soundName;
+
+    }
     public void PlaySound(string soundName,Transform position)
     {
        
        GameObject lesond= Instantiate(sound,position.position,position.rotation,position);
        lesond.GetComponent<TheSound>().soundName = soundName;
+       
+    }
+   
+    
+
+    public float SoundWithHisTime(string soundName)
+    {
+        GameObject lesond = Instantiate(sound);
+        lesond.GetComponent<TheSound>().soundName = soundName;
+        float getTime = soundGenerator[soundName].length;
+        return getTime;
     }
 
 
-    
-   
-   
+
+
+
 }
