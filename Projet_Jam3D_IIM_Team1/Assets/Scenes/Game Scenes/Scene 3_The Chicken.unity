@@ -1846,6 +1846,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 606054708}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &606054711 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 837769512, guid: daa9334f617fa894d9a108c68b15039c,
+    type: 3}
+  m_PrefabInstance: {fileID: 606054708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &672099352
 GameObject:
   m_ObjectHideFlags: 0
@@ -9226,7 +9232,7 @@ MonoBehaviour:
   item: {fileID: 0}
   posObject: {fileID: 606054709}
   throwForce: 500
-  offSet: {x: 0, y: 0, z: 0}
+  visor: {fileID: 606054711}
 --- !u!4 &2113826181
 Transform:
   m_ObjectHideFlags: 0
