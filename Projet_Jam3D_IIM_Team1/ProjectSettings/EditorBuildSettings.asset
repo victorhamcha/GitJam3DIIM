@@ -15,16 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Scenes/Scene 2_The Neutralifour.unity
     guid: 282e9b96bea293442b5547802e17c7f4
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/Game Scenes/Scene 3_The Chiken.unity
+    path: Assets/Scenes/Game Scenes/Scene 3_The Chicken.unity
     guid: 5fdd646fba8b3a44b9a34fa6b656fed6
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Scene 4_The Sauce.unity
     guid: 3f70d9da5be4019478f808f6c56e90a5
-=======
-    path: Assets/Scenes/Game Scenes/Scene 3_The Chiken 1.unity
-    guid: bf516a8935a2d14449385c0d7da58636
->>>>>>> Stashed changes
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Credit.unity
     guid: 0a903c15b870a6f46ba7babdc1b77d8c
