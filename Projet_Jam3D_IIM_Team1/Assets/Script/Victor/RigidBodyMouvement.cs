@@ -21,7 +21,7 @@ public class RigidBodyMouvement : MonoBehaviour
     public LayerMask groundMask;
     [SerializeField]
     bool mouved = false;
-   
+    private float helptime =0.1f;
 
     void Start()
     {
@@ -44,9 +44,21 @@ public class RigidBodyMouvement : MonoBehaviour
             Vector3 move = (transform.right * x + transform.forward * z);
 
             bool inMouvement = move.x+move.z+move.y !=0 ;
+            if(!inMouvement&&mouved)
+            {
+                helptime -= Time.deltaTime;
+            }
+            else
+            {
+                helptime = 0.1f;
+            }
             if((Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))&&!mouved)
             {
                 mouved = true;
+            }
+            if(!inMouvement&&mouved&&helptime<0)
+            {
+                FindObjectOfType<GameManager>().ReloadLevel();
             }
             
             move = Vector3.ClampMagnitude(move, 1);
@@ -69,16 +81,9 @@ public class RigidBodyMouvement : MonoBehaviour
                 speed = slideSpeed;
                 slide = true;
             }
-            if(inMouvement)
-            {
-               // FindObjectOfType<SoundManager>().PlaySound("Marcher", transform);
-            }
-
-            if(mouved&&!inMouvement)
-            {
-                FindObjectOfType<GameManager>().ReloadLevel();
-            }
            
+
+            
         }
         else
         {
