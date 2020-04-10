@@ -57,7 +57,7 @@ public class DragAndDropManager : MonoBehaviour
                         Drop();
                     }
                     item = Grab(hit.transform.gameObject);
-
+                    
                     // item.GetComponent<Rigidbody>().useGravity = false;
 
                 }
@@ -113,6 +113,7 @@ public class DragAndDropManager : MonoBehaviour
         grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         grabbedObject.GetComponent<Collider>().isTrigger = true;
         grabbedObject.transform.SetParent(posObject);
+        FindObjectOfType<SoundManager>().PlaySound("Attraper", grabbedObject.transform);
         return grabbedObject;
     }
 
@@ -144,5 +145,6 @@ public class DragAndDropManager : MonoBehaviour
         theObject = null;
         item = null;
         ellapsedtime = 0.1f;
+        FindObjectOfType<SoundManager>().PlaySound("jeter", Camera.main.transform);
     }
 }

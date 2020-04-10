@@ -59,6 +59,7 @@ public class RigidBodyMouvement : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 isGrounded = false;
+                FindObjectOfType<SoundManager>().PlaySound("Saut", transform);
                
             }
             if (Input.GetKeyDown(KeyCode.LeftShift)&&!slide)
@@ -68,11 +69,14 @@ public class RigidBodyMouvement : MonoBehaviour
                 speed = slideSpeed;
                 slide = true;
             }
-           
+            if(inMouvement)
+            {
+               // FindObjectOfType<SoundManager>().PlaySound("Marcher", transform);
+            }
 
             if(mouved&&!inMouvement)
             {
-                Debug.Log("loose");
+               //LOOOOOOSE
             }
            
         }
