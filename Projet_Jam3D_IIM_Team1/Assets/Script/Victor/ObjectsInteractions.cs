@@ -30,12 +30,13 @@ public class ObjectsInteractions : MonoBehaviour
             Instantiate(throwned, gameObject.transform.position, Quaternion.identity);
         }
         
-        if(gameObject.tag=="poulet"&&collision.gameObject.tag=="platforme")
+        if(gameObject.tag=="poulet"&& collision.gameObject.tag=="platforme" && collision.gameObject.name != "four")
         {
             //Debug.Log("qlkdf");
             UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-            if(scene.name=="Scene3")
+            if(scene.buildIndex == 3)
             {
+                GameManager.instance.ReloadLevel();
                 Debug.Log("loose");
             }
         }
