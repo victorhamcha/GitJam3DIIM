@@ -34,7 +34,7 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.IsLevelComplete())
+        if (GameManager.instance.IsLevelComplete() || GameManager.instance.IsLevelFailed())
             StopCoroutine(timeScaleCoroutine);
     }
 

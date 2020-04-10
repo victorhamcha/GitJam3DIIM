@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private bool once = false;
     private bool levelCompleted = false;
+    private bool levelFailed = false;
 
     private void Awake()
     {
@@ -124,8 +125,19 @@ public class GameManager : MonoBehaviour
 
     public void ReloadLevel()
     {
+        levelFailed = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         Time.timeScale = 1;
+    }
+
+    public  IEnumerator RestartLevelWithSound()
+    {
+        levelFailed = true;
+        Time.timeScale = 0f;
+        float rngSound = Random.Range(1, 3);
+        SoundManager.instance.PlaySound("Défaite" + rngSound, this.transform);
+        yield return new WaitForSecondsRealtime(SoundManager.instance.SoundWithHisTime("Défaite" + rngSound) + 0.5f);
+        ReloadLevel();
     }
 
     public int getLevelNum()
@@ -145,5 +157,10 @@ public class GameManager : MonoBehaviour
     public bool IsLevelComplete()
     {
         return levelCompleted;
+    }
+
+    public bool IsLevelFailed()
+    {
+        return levelFailed;
     }
 }

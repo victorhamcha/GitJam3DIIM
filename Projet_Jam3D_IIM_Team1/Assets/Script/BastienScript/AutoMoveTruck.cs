@@ -19,7 +19,7 @@ public class AutoMoveTruck : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Debug.Log("You died");
-            GameManager.instance.ReloadLevel();
+            StartCoroutine(GameManager.instance.RestartLevelWithSound());
         }
         if(other.gameObject.tag == "Start")
         {
@@ -31,7 +31,7 @@ public class AutoMoveTruck : MonoBehaviour
         if(other.gameObject.tag == "End")
         {
             Debug.Log("END");
-            GameManager.instance.ReloadLevel();
+            StartCoroutine(GameManager.instance.RestartLevelWithSound());
         }
         if (other.gameObject.CompareTag("WallParticles"))
         {

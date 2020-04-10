@@ -36,7 +36,7 @@ public class ObjectsInteractions : MonoBehaviour
             UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
             if(scene.buildIndex == 3)
             {
-                GameManager.instance.ReloadLevel();
+                StartCoroutine(GameManager.instance.RestartLevelWithSound());
                 Debug.Log("loose");
             }
         }
