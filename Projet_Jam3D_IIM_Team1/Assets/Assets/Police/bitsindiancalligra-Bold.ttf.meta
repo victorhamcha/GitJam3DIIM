@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea9d861d8cb48fb448b60a63576f9fd6
+guid: c70ba3aeba6e073479c57832ca03c2ec
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Muli
+  fontName: bits indian calligra
   fontNames:
-  - Muli
+  - bits indian calligra
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
