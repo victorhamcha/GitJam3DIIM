@@ -5,8 +5,8 @@ using UnityEngine;
 public class RigidBodyMouvement : MonoBehaviour
 {
   
-    public float normalSpeed = 12f;
-    public float slideSpeed = 25;
+    public float normalSpeed = 10f;
+    public float slideSpeed = 18;
     public float jumpHeight = 10f;
 
     private float speed;

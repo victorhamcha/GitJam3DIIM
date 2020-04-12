@@ -1108,6 +1108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: table_nape (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6919088369798964130, guid: 01c2a15c557dc1c40bcc58e743beb8c9,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToDestroyOnHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01c2a15c557dc1c40bcc58e743beb8c9, type: 3}
 --- !u!1001 &598773683
